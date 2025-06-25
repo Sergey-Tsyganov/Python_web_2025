@@ -1,16 +1,10 @@
-# Формат вывода
-# \ - начало escape sequence ("экран")
-# \n - перевод строки
-# \t - табуляция
-# \x - вывод символа по 2-знакоместам 16-формате (ASCII)
-# \u - вывод символа по 4-знакоместам 16-формате (Unicode)
-# Burned Again Shell - BUSH
-word1 = 'пришел'
-word2 = 'увидел'
-word3 = 'победил'
-word4 = '27\xB0C'  # ASCII
-
-print(word1, word2, word3, end=' -> ', sep=', ')
-print(word4)
-print('Концерт группы \"Кино\"')
-print('Путь к файлу: С:\\Program Files\\bin')
+name = 'Igor'
+email = "aaa@bbb.ru"
+age = 32
+weight = 34.33
+# способ
+print('Имя: %s, E-mail: %s, Возраст: %d' % (name,email,age))
+# 2 способ
+#print('Имя: {}, E-mail: {}, Возраст: {}' .format(name,email.age))
+# 3 способ
+print(f'Имя: {name}, E-mail: {email},Возраст: {age} , weight{weight:6.3f}')
