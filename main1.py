@@ -1,15 +1,15 @@
-#kghfkhkhg
-text = """Витязь на распутье
-Налево(L) пойдешь, вольну волю обретешь
-Направо(R) пойдешь, коня потеряшь
-Прямо(F) пойдешь, тоже хреново"""
-print(text)
-choice = input('Куда идем (RLF): ')
-if choice == 'L' or choice == 'l':
-    print('Воли захотел, фиг тебе')
-elif choice == 'R' or choice == 'r':
-    print('Гони коня')
-elif choice == 'F' or choice == 'f':
-    print('Уже хреново')
+hour = 21.59
+if hour > 23:
+    hour = 23
+elif hour < 0:
+    hour = 0
+if hour < 7:
+    print('доброй ночи')
+elif hour < 12:
+    print('доброе утро')
+elif hour < 17:
+    print('добрый день')
+elif hour < 22:
+    print('добрый вечер')
 else:
-    print('ерунду говоришь')
+    print('доброй ночи')
