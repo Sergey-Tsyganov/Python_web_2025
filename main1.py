@@ -12,4 +12,4 @@ elif choice == 'R' or choice == 'r':
 elif choice == 'F' or choice == 'f':
     print('Уже хреново')
 else:
-    print('Фигню говоришь')
+    print('ерунду говоришь')
