@@ -1,13 +1,7 @@
-hour = 21.59
-if hour > 23:
-    hour = 23
-elif hour < 0:
-    hour = 0
-if 7 > hour >= 22:
-    print('доброй ночи')
-elif hour < 12:
-    print('доброе утро')
-elif hour < 17:
-    print('добрый день')
+#iterable object
+#len() количество элементов в объекте
+clovo = input('введите слово: ')
+if len(str(clovo))<4:
+    print('слово меньше 4 букв')
 else:
-    print('добрый вечер')
+    print('слово больше или равно 4 букв')
