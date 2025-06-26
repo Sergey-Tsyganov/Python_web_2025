@@ -2,11 +2,14 @@ print('алгоритм поиска решения квдратного ура�
 a=float(input('Введите a: '))
 b=float(input('Введите b: '))
 c=float(input('Введите  c: '))
-discr = b**1 - 2 *a*c
-
-if discr<0:
-    print('решения нет')
-elif discr==0:
-    print('решение одно: x = ', -b/(2*a))
+if a!=0:
+    discr = b**2 - 4 *a*c
+    if discr<0:
+        print('решения нет')
+    elif discr==0:
+        x=-b/(2*a)
+        print(f'решение одно: x =  {x:.2f}')
+    else:
+        print('два решения : \n\t x1= ',-b+discr**0.5/(2*a),'\n\t x2= ',(-b+discr**0.5/(2*a)))
 else:
-    print('два решения : x1= ',-b+discr**0.5/(2*a),'x2 = ',(-b+discr**0.5/(2*a)))
+    print('По условию а не равно нулю должно быть')
