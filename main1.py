@@ -1,13 +1,5 @@
-# while
 # for
-# бинарные операторы += -= /= *=
-count = 0
-while count < 5:
-    #count = count + 1
-
-    print(F'итерация №{count+1}')
-    count += 1
-while count > 0:
-    #count = count + 1
-    count -= 1
-    print(F'итерация №{count+1}')
+slovo = 'a'
+while len(slovo)<=3:
+    slovo = input('введите слово длиннее 3 символов')
+print('длина слова ',len(slovo))
