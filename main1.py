@@ -1,5 +1,5 @@
-height = int(input('введите рост человека: '))
-while 150 >= height <= 180:
-    height = int(input('введите рост человека: '))
-    print('Не подходит', height)
-print(f'Рост: {height} - отлично')
+h = int(input('введите рост человека: '))
+while not 150 <= h <= 180:
+    print('Не подходит', h)
+    h = int(input('введите рост человека: '))
+print(f'Рост: {h} - отлично')
