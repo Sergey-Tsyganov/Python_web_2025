@@ -1,8 +1,5 @@
-
-count = 0
-while count <5:
-    count += 1
-    if count ==3:
-
-        continue
-    print('Итерация №',count)
+height = int(input('введите рост человека: '))
+while 150 >= height <= 180:
+    height = int(input('введите рост человека: '))
+    print('Не подходит', height)
+print(f'Рост: {height} - отлично')
