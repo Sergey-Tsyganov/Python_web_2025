@@ -1,5 +1,5 @@
 # for
-slovo = 'a'
-while len(slovo)<=3:
-    slovo = input('введите слово длиннее 3 символов')
-print('длина слова ',len(slovo))
+#цикл до ввода пустой строки
+while slovo := input('введите слово ') != '':
+    pass
+print ('пустая строка')
