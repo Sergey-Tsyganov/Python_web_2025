@@ -1,5 +1,12 @@
-#ключевое слово in
+#цикл for
+# for... in ...:
 
-word = 'поток'
-if 'ток' in word:
-    print('Ок')
+#word = 'поток'
+#for ch in word:
+#    print(ch)
+
+#rahge (start,stop,step)
+
+for i in range(1,101):
+    if i % 10 == 5:
+        print(i)
