@@ -63,6 +63,29 @@
 #     if i in d:
 #         count +=1
 # print(count)
-s='Python'
-for  index in range(len(s)):
-    print (s[index])
+# s='Python'
+# for  index in range(len(s)):
+#     print (s[index])
+# исправить букву в слове
+# s = 'сабака'
+# s1=''
+# for index in range(len(s)):
+#     if index == 1:
+#         s1+='о'
+#     else:
+#         s1+=s[index]
+# print(s1)
+# ord(символ) код симвода в Unicode
+# chr(символ) код симвода в Unicode
+# s='\xB0'
+# u='\u2603'
+#
+# print(f'25{s}C')
+# print(f'25{u}C')
+# print(f'код снеговика {ord('☃')}')
+# print(chr(9731))
+# s=input('введите фразу')
+# s1=set()
+# for index in range(len(s)):
+#     s1.add(chr(index))
+#     print(s1)
