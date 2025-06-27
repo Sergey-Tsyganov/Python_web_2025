@@ -35,19 +35,34 @@
 # # temp=s.pop() # удаляет произвольный элемент
 # print(s)
 # операции надо множествами
-a = {1, 2, 3}
-b = {1, 2, 4}
-# объединение множеств
-c = a.union(b)  # или a|b
-print(c)
-# пересечение
-c = a.intersection(b) # a&b
-print(c)
-
-#разность
-c= a.difference(b) # есть в первом но нет во стором c=b-a
-print(c)
-# симметричная разность есть непересекающиеся элементы
-c= a.symmetric_difference(b) # b^a
-print(c)
+# a = {1, 2, 3}
+# b = {1, 2, 4}
+# # объединение множеств
+# c = a.union(b)  # или a|b
+# print(c)
+# # пересечение
+# c = a.intersection(b) # a&b
+# print(c)
+#
+# #разность
+# c= a.difference(b) # есть в первом но нет во стором c=b-a
+# print(c)
+# # симметричная разность есть непересекающиеся элементы
+# c= a.symmetric_difference(b) # b^a
+#print(c)
 # s=set() # создание пустого множества других вариантов нет
+# # строки
+# s='Python'
+# print(s[0])
+# #s[3]='y' нельзя
+# s='длинношеее'
+# slovar = {'а','е','о','у','и'}
+# d = 'аеиоёуюя'
+# count =0
+# for i  in s:
+#     if i in d:
+#         count +=1
+# print(count)
+s='Python'
+for  index in range(len(s)):
+    print (s[index])
