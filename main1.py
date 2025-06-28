@@ -89,3 +89,45 @@
 # for index in range(len(s)):
 #     s1.add(chr(index))
 #     print(s1)
+# шифр цезаря
+# word = ('Привет')
+# word2=''
+# for i in range(1,len(word)+1):
+#     word2 += word[i-1]*i
+# print (word2)
+# шифр цезаря
+print('Программа шифрации и дешифрации кириллического текста со знаками')
+print('препинания и математическими символами. Без знака \'')
+print('Используется шифр Цезаря')
+# word = input('Введите слово или предложение')
+# word = 'Привет'
+koded = ''
+dekoded = ''
+alphabet = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя,.!?:;"()+-*/=<>^% '
+choice = input('ЧТо будем делать /n шифруем - 1 /n дешифруем - 2: ')
+if choice == '1':
+    print('Шифрование текста')
+    sdvig = int(input('Введите количество знаков, на который будет сдвиг'))
+    word = input('Введите слово или предложение')
+    for i in range(len(word)):
+        for j in range(len(alphabet)):
+            if alphabet[j] == word[i]:
+                if j+sdvig>=len(alphabet):
+                    newnum = j+sdvig-len(alphabet)
+                else:
+                    newnum=j+sdvig
+                koded += alphabet[newnum]
+    print(koded)
+else:
+    print('Дешифрование текста')
+    sdvig = int(input('Введите количество знаков, на который был сдвиг'))
+    word = input('Введите зашифрованный текст')
+    for i in range(len(word)):
+        for j in range(len(alphabet)):
+            if alphabet[j] == word[i]:
+                if j - sdvig < 0:
+                    newnum = j - sdvig + len(alphabet)
+                else:
+                    newnum = j - sdvig
+                dekoded += alphabet[newnum]
+    print(dekoded)
