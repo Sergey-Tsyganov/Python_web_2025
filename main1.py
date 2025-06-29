@@ -49,7 +49,7 @@
 # print(c)
 # # симметричная разность есть непересекающиеся элементы
 # c= a.symmetric_difference(b) # b^a
-#print(c)
+# print(c)
 # s=set() # создание пустого множества других вариантов нет
 # # строки
 # s='Python'
@@ -107,15 +107,16 @@ alphabet = '0123456789АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫ
 choice = input('ЧТо будем делать /n шифруем - 1 /n дешифруем - остальное: ')
 if choice == '1':
     print('Шифрование текста')
+    print(f'Максимальный сдвиг {len(alphabet)-1} знаков')
     sdvig = int(input('Введите количество знаков, на который будет сдвиг: '))
     word = input('Введите слово или предложение: ')
     for i in range(len(word)):
         for j in range(len(alphabet)):
             if alphabet[j] == word[i]:
-                if j+sdvig>=len(alphabet):
-                    newnum = j+sdvig-len(alphabet)
+                if j + sdvig >= len(alphabet):
+                    newnum = j + sdvig - len(alphabet)
                 else:
-                    newnum=j+sdvig
+                    newnum = j + sdvig
                 koded += alphabet[newnum]
     print(koded)
 else:
