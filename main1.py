@@ -126,3 +126,11 @@ lst = [] # пустой список
 #     print( item)
 # print(s)
 
+#создание аббревиатур
+s=list()
+
+
+while (item :=input('введите слово ')) !='':
+    s.append(item[0])
+
+print(*s,sep='')
