@@ -1,5 +1,5 @@
 # cnhjrb
-#startwith endwith
+# startwith endwith
 from builtins import PythonFinalizationError
 
 # s='Cмотреть'
@@ -11,10 +11,10 @@ from builtins import PythonFinalizationError
 # index=s.find('еть')
 # print(s)
 # есть ли есть в строке первое вхождение
-#1.find('подстрока') - если есть от возвращает индекс
-#2.find('подстрока',start) - если есть от возвращает индекс c мета страт
-#2.find('подстрока',start, end) - если есть от возвращает индекс c мета страт до места end
-#index=s.find('еть',10,15)
+# 1.find('подстрока') - если есть от возвращает индекс
+# 2.find('подстрока',start) - если есть от возвращает индекс c мета страт
+# 2.find('подстрока',start, end) - если есть от возвращает индекс c мета страт до места end
+# index=s.find('еть',10,15)
 # s = 'синхрофазотрон'
 # ch = 'о'
 # if ch in s:
@@ -34,10 +34,10 @@ from builtins import PythonFinalizationError
 # 1. replace('что','на что', сколько раз) полная замена
 # s='тиливизор'
 # print(s.replace('и','е',2))
-#s='+7-012-345-67-89'
+# s='+7-012-345-67-89'
 
-#sliсe срез может быть у строки и у других коллекций, за исключением множеств(set)
-#[начало:окончание(не включительно):шаг]
+# sliсe срез может быть у строки и у других коллекций, за исключением множеств(set)
+# [начало:окончание(не включительно):шаг]
 # обращение по срезу не приводит к вылету за предел
 # работате быстрее
 # s='Добрый день'
@@ -61,16 +61,16 @@ from builtins import PythonFinalizationError
 # print(s[:5][::-1].lower()+' '+ s[::-1].replace(' ','').lower().capitalize())
 
 
-#Списки
+# Списки
 # s={'3','4','5'}
 # lst=list(s) #  превращение множества в список типколлекции и форма преобразования в коллекцию
 # print(s)
 # lst=list(range(1,10))
 # print(l)
 
-lst = [] # пустой список
+lst = []  # пустой список
 # или
-#lst = lst()
+# lst = lst()
 # lst = [1,2,3]
 # print(lst)
 # lst2=list('Pethon')
@@ -127,7 +127,7 @@ lst = [] # пустой список
 #     print( item)
 # print(s)
 
-#создание аббревиатур
+# создание аббревиатур
 # s=list()
 #
 #
@@ -183,17 +183,43 @@ lst = [] # пустой список
 #     print(f'{i+1}.{v}')
 
 
-
 # методы строки
 # split и join
 
 text = 'оди     два три четыре'
-ip='192.168.0.1'
+ip = '192.168.0.1'
 lst = ip.split('.')
 print(lst)
 text2 = '-'.join(lst)
 print(text2)
-#['192', '168', '0', '1']
+# ['192', '168', '0', '1']
 
 # есть список стоп слов стоп лист с какими то словами которые запрещены
 # пользователь вводит - выводится список убирая слова из стоп списка
+#
+text1 = input('Введите текст')
+slova = ['черт', 'хрен']
+t2 = []
+t3=[]
+
+text1=text1.replace('.', ' ')
+text1=text1.replace(',', ' ')
+text1=text1.replace('!', ' ')
+text1=text1.replace('?', ' ')
+text1=text1.replace(':', ' ')
+text1=text1.replace(';', ' ')
+text1=text1.strip().lower()
+#print(text1)
+
+t2 = text1.split()
+
+t2 = tuple(t2)
+#print(t2)
+for item in t2:
+    if item in slova:
+        pass
+    else:
+        t3.append(item)
+t3.sort()
+for i, v in enumerate(t3):
+    print(f'{i + 1}.{v}')
