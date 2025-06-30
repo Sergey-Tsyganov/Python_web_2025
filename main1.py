@@ -1,5 +1,6 @@
 # cnhjrb
 #startwith endwith
+from builtins import PythonFinalizationError
 
 # s='Cмотреть'
 # if s.lower.startwith('смо')
@@ -127,10 +128,25 @@ lst = [] # пустой список
 # print(s)
 
 #создание аббревиатур
-s=list()
+# s=list()
+#
+#
+# while (item :=input('введите слово ')) !='':
+#     s.append(item[0])
+#
+# print(*s,sep='')
 
+# кортеж(Tuple)
+# такой же список , но неизменяемый
+BLACK = (0,0,0)
+empty = () # tuple
+s='Python'
+t = tuple(s)+('.',)
+print(t)
+# методы
+# 'count', 'index']
 
-while (item :=input('введите слово ')) !='':
-    s.append(item[0])
-
-print(*s,sep='')
+cards=[(7,'Червей'),('туз','пик')]
+# список кортежей
+# сравнение кортежей
+print((1,2)==(1,2))
