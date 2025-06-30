@@ -58,3 +58,57 @@
 # s='Дорог Рим'
 #
 # print(s[:5][::-1].lower()+' '+ s[::-1].replace(' ','').lower().capitalize())
+
+
+#Списки
+# s={'3','4','5'}
+# lst=list(s) #  превращение множества в список типколлекции и форма преобразования в коллекцию
+# print(s)
+# lst=list(range(1,10))
+# print(l)
+
+lst = [] # пустой список
+# или
+#lst = lst()
+# lst = [1,2,3]
+# print(lst)
+# lst2=list('Pethon')
+# print(lst2)
+# lst3 = [1,2,3]*3
+# print(lst3)
+# print(lst[:2])
+# # метод списка
+# #['append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+# lst[1] ='o'
+# print(lst)
+
+# распечатать список квадратов от 0 до 9
+# lst=list(range(10))
+# slice=lst[:len(lst):2]
+# print(slice)
+#
+# for item in range(0,len(lst),2):
+#     print (lst[item]," - ",lst[item]**2)
+# lst=list(range(10))
+# del lst[2]
+# print(lst)
+# сортировка
+# lst = [1,2,3]*3
+# lst.sort()
+# print (lst)
+# lst.reverse()
+# print (lst)
+# lst.sort(reverse=True)
+# print (lst)
+# b=a[]
+
+# задача на ввод списка и сорировку пересчет и вывод
+# s=list()
+# while (item :=input('введите ингридиент')) !='':
+#     s.append(item)
+# s.sort()
+# print(len(s))
+# for i in range(len(s)):
+#     print(f'{i+1}, ',s[i])
+
+
