@@ -156,12 +156,18 @@ lst = [] # пустой список
 # r,g,b, = channels
 # print (r)
 # a,b,c = 1,2,3
-statist =[]
-for _ in range(3):
-    fio, ball = input('Введите фио Студента:' ), float(input('Введите средний балл:' ))
-    statist.append((fio,ball))
-print (*statist, sep='\n')
+# statist =[]
+# for _ in range(3):
+#     fio, ball = input('Введите фио Студента:' ), float(input('Введите средний балл:' ))
+#     statist.append((fio,ball))
+# print (*statist, sep='\n')
+#
+# for st in statist:
+#     fio, ball = st
+#     print('Студент - ', fio, 'средний балл - ', ball)
 
-for st in statist:
-    fio, ball = st
-    print('Студент - ', fio, 'средний балл - ', ball)
+# sorted сортировка - выдает на выходе сортированный список
+# функция сортировки
+s= {'Иванов','Петров','Сидоров'}
+lst = sorted(s)
+print(*lst,sep=', ')
