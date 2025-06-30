@@ -4,7 +4,6 @@
 # 2.списки
 # 3.словари
 # 4.карточки
-
 # 1
 # методы 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard',
 # 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset',
