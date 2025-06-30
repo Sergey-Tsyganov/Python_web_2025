@@ -138,15 +138,30 @@ lst = [] # пустой список
 
 # кортеж(Tuple)
 # такой же список , но неизменяемый
-BLACK = (0,0,0)
-empty = () # tuple
-s='Python'
-t = tuple(s)+('.',)
-print(t)
-# методы
-# 'count', 'index']
+# BLACK = (0,0,0)
+# empty = () # tuple
+# s='Python'
+# t = tuple(s)+('.',)
+# print(t)
+# # методы
+# # 'count', 'index']
+#
+# cards=[(7,'Червей'),('туз','пик')]
+# # список кортежей
+# # сравнение кортежей
+# print((1,2)==(1,2))
 
-cards=[(7,'Червей'),('туз','пик')]
-# список кортежей
-# сравнение кортежей
-print((1,2)==(1,2))
+#  распаковка и запаковка
+# channels = ['red','green','blue']
+# r,g,b, = channels
+# print (r)
+# a,b,c = 1,2,3
+statist =[]
+for _ in range(3):
+    fio, ball = input('Введите фио Студента:' ), float(input('Введите средний балл:' ))
+    statist.append((fio,ball))
+print (*statist, sep='\n')
+
+for st in statist:
+    fio, ball = st
+    print('Студент - ', fio, 'средний балл - ', ball)
