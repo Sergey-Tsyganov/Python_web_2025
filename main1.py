@@ -103,12 +103,26 @@ lst = [] # пустой список
 # b=a[]
 
 # задача на ввод списка и сорировку пересчет и вывод
-# s=list()
+# s=list() или s=[]
 # while (item :=input('введите ингридиент')) !='':
 #     s.append(item)
 # s.sort()
+# убираем задвоения
+# temp = set(list)
+# lst=list(temp)
 # print(len(s))
 # for i in range(len(s)):
 #     print(f'{i+1}, ',s[i])
 
+# имтация стека
+# s=list()
+# s1=list()
+#
+# while (item :=input('введите книжку ')) !='':
+#     s.append(item)
+#
+# while s:
+#     item = s.pop(0) # если нуля нет то первый выйдет последним
+#     print( item)
+# print(s)
 
