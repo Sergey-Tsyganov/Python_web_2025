@@ -178,6 +178,19 @@ lst = [] # пустой список
 # for item in enumerate(fio):
 #     print(item)
 # в цикле возвращает пару индекс и поле
-fio= ['Иванов','Петров','Сидоров']
-for i,v in enumerate(fio):
-    print(f'{i+1}.{v}')
+# fio= ['Иванов','Петров','Сидоров']
+# for i,v in enumerate(fio):
+#     print(f'{i+1}.{v}')
+
+
+
+# методы строки
+# split и join
+
+text = 'оди     два три четыре'
+ip='192.168.0.1'
+lst = ip.split('.')
+print(lst)
+text2 = '-'.join(lst)
+print(text2)
+#['192', '168', '0', '1']
