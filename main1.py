@@ -423,10 +423,21 @@ lst = []  # пустой список
 #
 # print_list([1,2,3])
 
-def greet(name='noname'):
-    print('Привет,', name)
-    name = 'Петя'
-    return 5
-greet('Вася')
-print (greet())
-greet()
+# def greet(name='noname'):
+#     print('Привет,', name)
+#     name = 'Петя'
+#     return 5
+# greet('Вася')
+# print (greet())
+# greet()
+
+def square(n=0):
+    return n**2
+
+print(square(4))
+#Функция  нужно выводить число словами 56 - пятьдесят шесть макс трехзначное
+def num_ti_text(num)
+    if srt(num)>2:
+        return
+    e=num%10
+    le = ['один','два']
