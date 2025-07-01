@@ -263,3 +263,73 @@ lst = []  # пустой список
 # temp = [ i  for  i in text.split()[2::3]]
 #
 # print (temp)
+
+
+# Вложенные списки
+
+# matrix=[
+#     [1,2,3],
+#     [4,5,6],
+#     [7,8,9],
+# ]
+# for row in range(3):
+#     for col in range(3):
+#         print(matrix[row][col])
+# # обход двумерного списка
+# for row in range(len(matrix)):
+#     for col in range(len(matrix[row])):
+#         print(matrix[row][col])
+#
+# count =1
+# matrix=[[1]*3 for _ in range(3)]
+# for row in range(len(matrix)):
+#     for col in range(len(matrix[row])):
+#          (matrix[row][col])=count
+#          count+=1
+# print(matrix)
+# элегантное решение
+# N=3
+# matrix=[[i+j for j in range(N)] for i in range(1,8,3) ]
+# print(matrix)
+
+
+# словари
+# нет индекса есть ключ
+# пустой словарь
+# создание пустого
+# d ={}
+# второй способ
+# d=dict(d)
+# предзаполненный словарь
+d = {
+    'table':[ 'таблица','стол'],
+    'well':['хорошо','колодец','скважина' ],
+    'chair': 'стул',
+    'apple': 'яблоко',
+}
+
+#добавление в словарь
+d['toble']=['хз']
+print(d)
+# добавление  значения в список
+d['toble'].append('хз2')
+print(d)
+
+# удаление элемента
+
+del d['toble']
+print(d) # Словарь целиком как есть
+# перебор по циклу вывод значений по строкам
+for key in d:
+    print(key,d[key])
+
+# методы
+# 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+#удаляет элемент и возвращает его в переменну.
+deleted_item = d.pop('apple')
+print(deleted_item)
+# поиск по ключу
+print('есть ли стул')
+
+if 'chair' in d:
+    print('да,есть')
