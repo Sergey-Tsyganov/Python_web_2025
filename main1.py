@@ -186,41 +186,80 @@ lst = []  # пустой список
 # методы строки
 # split и join
 
-text = 'оди     два три четыре'
-ip = '192.168.0.1'
-lst = ip.split('.')
-print(lst)
-text2 = '-'.join(lst)
-print(text2)
-# ['192', '168', '0', '1']
+# text = 'оди     два три четыре'
+# ip = '192.168.0.1'
+# lst = ip.split('.')
+# print(lst)
+# text2 = '-'.join(lst)
+# print(text2)
+# # ['192', '168', '0', '1']
 
 # есть список стоп слов стоп лист с какими то словами которые запрещены
 # пользователь вводит - выводится список убирая слова из стоп списка
 
 # создание отсортированного списка с исключениями
-text1 = input('Введите текст')
-slova = ['черт', 'хрен']
-t2 = []
-t3=[]
-# убираем знаки препинания
-text1=text1.replace('.', ' ')
-text1=text1.replace(',', ' ')
-text1=text1.replace('!', ' ')
-text1=text1.replace('?', ' ')
-text1=text1.replace(':', ' ')
-text1=text1.replace(';', ' ')
-text1=text1.strip().lower()
-#print(text1)
+# text1 = input('Введите текст')
+# slova = ['черт', 'хрен']
+# t2 = []
+# t3=[]
+# # убираем знаки препинания
+# text1=text1.replace('.', ' ')
+# text1=text1.replace(',', ' ')
+# text1=text1.replace('!', ' ')
+# text1=text1.replace('?', ' ')
+# text1=text1.replace(':', ' ')
+# text1=text1.replace(';', ' ')
+# text1=text1.strip().lower()
+# #print(text1)
+#
+# t2 = text1.split()
+#
+# t2 = tuple(t2)
+# #print(t2)
+# for item in t2:
+#     if item in slova:
+#         pass
+#     else:
+#         t3.append(item)
+# t3.sort()
+# for i, v in enumerate(t3):
+#     print(f'{i + 1}.{v}')
 
-t2 = text1.split()
 
-t2 = tuple(t2)
-#print(t2)
-for item in t2:
-    if item in slova:
-        pass
-    else:
-        t3.append(item)
-t3.sort()
-for i, v in enumerate(t3):
-    print(f'{i + 1}.{v}')
+# Списочные выражения (list comprehension)
+
+# традиционно
+# squares =[]
+# for i in range(10):
+#     squares.append(i**2)
+# print(*squares,', ')
+
+# # то же самое
+# squares = [i**2 for i in range(10)]
+# print(*squares,sep =', ')
+#
+# # квадраты четных чисел
+# squares = [i**2 for i in range(10) if i%2 ==0]
+# print(*squares,sep =', ')
+#
+# #произведение i j
+#
+# print([j*i for i in range(3) for j in range(3)])
+# for i in range(3):
+#     for j in range(3):
+#      print(i*j)
+
+# n='500 600 700 800'
+# print([int(i) for i in n.split()])
+
+# n='500 600 700 800'
+# approved = ['500','600']
+# print([int(i) for i in n.split() if i in approved])
+
+# вырезание каждого 3 слова
+# text = 'Списочные выражения применяются для эффективности ввода и оперативности'
+# #temp = [ i  for  i in text.split() if (text.index(i)+1 ) % 3 ==0 ]
+# # более эффективно
+# temp = [ i  for  i in text.split()[2::3]]
+#
+# print (temp)
