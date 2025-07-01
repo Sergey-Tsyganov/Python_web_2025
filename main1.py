@@ -69,6 +69,8 @@ from builtins import PythonFinalizationError
 # print(l)
 
 lst = []  # пустой список
+
+
 # или
 # lst = lst()
 # lst = [1,2,3]
@@ -331,13 +333,13 @@ lst = []  # пустой список
 # # поиск по ключу
 # print('есть ли стул')
 
-d = {
-    'table': ['таблица', 'стол'],
-    'well': ['хорошо', 'колодец', 'скважина'],
-    'chair': 'стул',
-    'apple': 'яблоко',
-    (55.6,30.2): 'Москва',
-}
+# d = {
+#     'table': ['таблица', 'стол'],
+#     'well': ['хорошо', 'колодец', 'скважина'],
+#     'chair': 'стул',
+#     'apple': 'яблоко',
+#     (55.6,30.2): 'Москва',
+# }
 
 # if 'chair' in d:
 #     print('да,есть')
@@ -390,4 +392,41 @@ d = {
 # for k,v in res.items():
 #     print(k,v)
 
-# Функции
+# Функции (dry)
+# Scope (local or global) - области видимости переменной
+# начинается с def <имя функции>([параметры]):
+#   команды
+# def greet(name):
+#     print('Привет,',name)
+#     name = 'Петя'
+#
+#
+# greet('Вася')
+
+# count=0
+# def increment():
+#     print(count)
+#
+# increment()
+# count=0
+# def increment():
+#     global count
+#
+#     print(count)
+#     count += 1
+# increment()
+# print(count)
+
+# def print_list(array):
+#     for item in array:
+#         print(item)
+#
+# print_list([1,2,3])
+
+def greet(name='noname'):
+    print('Привет,', name)
+    name = 'Петя'
+    return 5
+greet('Вася')
+print (greet())
+greet()
