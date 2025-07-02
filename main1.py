@@ -604,3 +604,53 @@ from json.decoder import WHITESPACE_STR
 # print_array(a,1)
 # print_array(a)
 
+
+#ВОзвращение нескольких значений из функции
+# def coordinates() -> tuple:
+#     return 5.4,3.2,'Вася'
+# #x,y = coordinates()
+# x,y, z = coordinates()
+#
+# print(coordinates())
+# print(x,y,z)
+
+
+# Функция с переменным числом аргументов
+
+# def multy(*arcs): #* означает что значений несколько
+#     # print (len(arcs)) # подсчет числа аргументов
+#     # print(arcs) # по индексу или перебором в цикле
+#     temp=1
+#     for  arg in arcs:
+#         temp*=arg
+#     return temp
+#
+# print(multy(1,2,3))
+
+# функция с позиционным аргументом
+
+# def multy(first, *arcs): #* означает что значений несколько
+#     # print (len(arcs)) # подсчет числа аргументов
+#     # print(arcs) # по индексу или перебором в цикле
+#     temp=1
+#     for  arg in arcs:
+#         temp*=arg
+#     return temp
+#
+# # именованые аргументы = положение любое
+# def fio(name,surname):
+#     return f'{name},{surname}'
+# print(fio(name ='Остап', surname='Бендер'))
+# print(multy(1,2,3))
+
+#sandwitch
+def sandwitch(type_of_meat, with_onion=False,with_tomatoe=False):
+    print('Булочка')
+    if with_onion:
+        print('Onion')
+    print(type_of_meat)
+    if with_tomatoe:
+        print('Tomatoe')
+    print('Булочка')
+
+sandwitch('котлета',1,1)
