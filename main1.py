@@ -698,4 +698,14 @@ from json.decoder import WHITESPACE_STR
 # for word in filter(na_a,words):
 #      print(word)
 
+def square(num):
+    return num**2
 
+nums=(1,2,3,4,5)
+squares =map(square,nums)
+squares2=map(str,squares)
+rez=''.join(squares2)
+print(rez)
+
+
+#получить
