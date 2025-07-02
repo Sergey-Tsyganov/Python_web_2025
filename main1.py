@@ -1,6 +1,7 @@
 # cnhjrb
 # startwith endwith
 from builtins import PythonFinalizationError
+from json.decoder import WHITESPACE_STR
 
 # s='Cмотреть'
 # if s.lower.startwith('смо')
@@ -68,7 +69,7 @@ from builtins import PythonFinalizationError
 # lst=list(range(1,10))
 # print(l)
 
-#lst = []  # пустой список
+# lst = []  # пустой список
 
 
 # или
@@ -364,9 +365,9 @@ from builtins import PythonFinalizationError
 # # или
 # pear = d.get('peat','Груши нет')
 # print('где груша',pear)
-#print(d[(55.6,30.2)])
+# print(d[(55.6,30.2)])
 
-#Частотный анализ
+# Частотный анализ
 # text = """
 # Утром 1 июля глава Удмуртской Республики Александр Бречалов сообщил, что украинский беспилотник атаковал одно из предприятий в Ижевске. По его словам, в результате удара есть погибшие и тяжелораненые.
 # Ведомости собрали информацию о том, что известно на данный момент об ударе по предприятию в Ижевске.
@@ -483,7 +484,7 @@ from builtins import PythonFinalizationError
 #     # e=num%10
 
 
-#аннотирование  функций для удобства
+# аннотирование  функций для удобства
 # def number_to_words(n: int) -> str:
 #     """
 #     Функция переводит число в число словами
@@ -537,13 +538,56 @@ from builtins import PythonFinalizationError
 # def main():
 # #вызываем все функции
 
-#return vs yield
+# return vs yield
 # def generate_list():
 #     for i in range(5):
 # #        return i - завершает работу
-#         yield i
+#         yield i   - возвращает и продолжает работу
 # # если выводится несколько величин их надо превратить в список, и т.д.
 # array =list(generate_list())
 # print(array)
+
+
+# если парамтер у функции есть, то аргумент должен быть если не используется
+# def print_gb(arg):
+#     print('good bye', end=' ')
+#
+#
+# def print_cruel(arg):
+#     print('cruel', end=' ')
+#
+#
+# def print_world(arg):
+#     print('world', end=' ')
+#
+#
+# def main():
+#
+#     print_gb(1)
+#     print_cruel(1)
+#     print_world(1)
+#
+# main()
+
+
+# оператор a is b то True будет только тогда когда а и в один и тот же объект
+# a=[0]
+#
+# print(id(a))
+# a[0] +=1
+# print(id(a))
+# Списки словари и множеста - изменяемые , строка и кортеж, число не изменяемые
+
+
+#содержимое одинаковое но объекты разные
+# my_ref = ['колбаса','молоко']
+# # присвоение - указание на тот же холодильник
+# #his_ref = my_ref
+# his_ref = my_ref[:] # копирование теперь это разные объекты
+# # his_ref = my_ref.copy() - или такая запись
+# #his_ref = ['колбаса','молоко']
+# print(my_ref==his_ref)
+# print(id(my_ref)==id(his_ref))
+
 
 
