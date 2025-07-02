@@ -1,6 +1,7 @@
 # cnhjrb
 # startwith endwith
 from builtins import PythonFinalizationError
+from idlelib.colorizer import prog_group_name_to_tag
 from json.decoder import WHITESPACE_STR
 
 # s='Cмотреть'
@@ -644,13 +645,38 @@ from json.decoder import WHITESPACE_STR
 # print(multy(1,2,3))
 
 #sandwitch
-def sandwitch(type_of_meat, with_onion=False,with_tomatoe=False):
-    print('Булочка')
-    if with_onion:
-        print('Onion')
-    print(type_of_meat)
-    if with_tomatoe:
-        print('Tomatoe')
-    print('Булочка')
+# def sandwitch(type_of_meat, with_onion=False,with_tomatoe=False):
+#     print('Булочка')
+#     if with_onion:
+#         print('Onion')
+#     print(type_of_meat)
+#     if with_tomatoe:
+#         print('Tomatoe')
+#     print('Булочка')
+#
+# sandwitch('котлета',1,1)
 
-sandwitch('котлета',1,1)
+# args kwargs переменное количество переменных и именованных аргументов
+# def print_any(*args,**kwargs):
+#     for i in args:
+#         print(i)
+#     for k,v in kwargs.items():
+#         print(k, '=', v)
+#
+#
+# print_any(1,2,name='Дмитрий', age=25)
+# print_any('Дмитрий','Колесов',city='Москва', age=25)
+
+# def profile(name, surname, city, *children,**add):
+#     print(name)
+#     print(surname)
+#     print(city)
+#     if len(children)>0:
+#         print('Дети',', '.join(children))
+#     print('Хобби')
+#     print(add)
+#
+#
+# profile('Дмитий','Колесов',"Далезадовск",'Мария','Петр', hobby='дача')
+
+
