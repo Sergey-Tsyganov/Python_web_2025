@@ -533,6 +533,17 @@ from builtins import PythonFinalizationError
 #
 # greet('Петр')
 
-# главнвя функция в конце
-def main():
-#вызываем все функции
+# # главнвя функция в конце
+# def main():
+# #вызываем все функции
+
+#return vs yield
+# def generate_list():
+#     for i in range(5):
+# #        return i - завершает работу
+#         yield i
+# # если выводится несколько величин их надо превратить в список, и т.д.
+# array =list(generate_list())
+# print(array)
+
+
