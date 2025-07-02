@@ -68,7 +68,7 @@ from builtins import PythonFinalizationError
 # lst=list(range(1,10))
 # print(l)
 
-lst = []  # пустой список
+#lst = []  # пустой список
 
 
 # или
@@ -495,3 +495,44 @@ lst = []  # пустой список
 #
 
 
+# Ав от так делать нельзя
+# функция меняет глобальную переменную
+# a=[1,2]
+#
+# def change_array():
+#     a[0]=0
+# change_array()
+# print (a)
+
+# def print_array(array: list)-> None:
+#     for item in array:
+#         print(item)
+#
+# words =['Привет','world']
+# print_array(words)
+
+# не надо использовать имена глобальных переменных в функциях
+# PI=3.14
+# square = 'Дворцовая'
+# def sq_area(length,width):
+#     square = length*width
+#     print(square)
+# sq_area(2,3)
+# print(square)
+#
+# def circle_rad(radius):
+#     per = 2*PI*radius
+#     print(f'{per:.2f}')
+#
+# circle_rad(3)
+
+# def greet(name):
+#     print('Привет ',name)
+#     name = 'Друг'
+#     print('Здравстуй ',name)
+#
+# greet('Петр')
+
+# главнвя функция в конце
+def main():
+#вызываем все функции
