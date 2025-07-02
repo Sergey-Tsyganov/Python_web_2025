@@ -590,4 +590,17 @@ from json.decoder import WHITESPACE_STR
 # print(id(my_ref)==id(his_ref))
 
 
+#функ выводит массив рименение is на практике
+# def print_array(array: list,start: int=None):
+#     if start is None:
+#         for i in array:
+#             print(i)
+#     else:
+#         for i in range(start,len(array)):
+#             print(array[i])
+#
+#
+# a=[1,2,3]
+# print_array(a,1)
+# print_array(a)
 
