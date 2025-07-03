@@ -729,3 +729,38 @@ words = ['В', 'арбан', 'списке', 'останутся', 'длина',
 # print( rez)
 # res =[x for x  in words if len(x)>6]
 # print ( list(res))
+
+English_ABC = set([chr(ch) for ch in range(ord('a'),ord('z')+1)])
+Russian_ABC = set([chr(ch) for ch in range(ord('а'),ord('я')+1)]+['ё'])
+#print(English_ABC)
+#print(Russian_ABC)
+ABC = English_ABC^Russian_ABC
+#print(ABC)
+text ='привет, друг'
+# text = ''.join(filter(lambda x: x in ABC^{' '}, text))
+# print (text)
+# def remove_punktuation(txt):
+#     return ''.join(filter(lambda x: x in ABC^{' '}, txt))
+#
+# print(remove_punktuation(text))
+# t2=remove_punktuation(text)
+#
+# def get_words(txt):
+#     return remove_punktuation(txt).split
+# t3=str(get_words(t2))
+# print(t3)
+#
+# def long_words(txt,length=4):
+#      return filter(lambda word: len(word)>length, get_words(txt))
+# print(long_words(t3))
+# n
+# squares = {n:n**2 for n in range(1,10) if n%2==0}
+# print(squares)
+
+source_dict = {
+    'x':1,
+    'y':2,
+    'z':3,
+}
+rez_dict = {k: v*2 for k,v in source_dict.items()}
+print(rez_dict)
