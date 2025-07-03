@@ -856,5 +856,83 @@
 # print(fact1(100))
 
 
+# черепашья графика
+
+# import turtle as t
+# N=40
+# t.penup()
+# t.goto(0,-300)
+# t.pendown()
+# t.speed(N)
+# for i in range(N):
+#     t.forward(50)
+#     t.left(360//N)
+#
+# t.mainloop()
+
+# import turtle as t
+# R=40
+# N=40
+# t.penup()
+# t.goto(0,-300)
+# t.pendown()
+# t.speed(5)
+# for i in range(N):
+#     t.circle(100)
+#     t.right(360//N)
+#
+# t.mainloop()
+
+#
+# import turtle as t
+# N=5
+#
+# for _ in range(N):
+#     for i in range(N):
+#         t.forward(50)
+#         t.left(360//N)
+#     t.right(360/5)
+# t.mainloop()
+
+# import turtle as t
+# def qv(b):
+#
+#     for _ in range(b):
+#         t.circle(100)
+#         t.right(360 /b)
+#
+# qv(10)
+# t.mainloop()
+# import turtle as t
+# N=5
+# colors =['red','green','blue','yellow','purple', 'orange']
+# t.bgcolor('black')
+# angle = 360/len( colors) -1
+#
+# for x in range (200):
+#     t.pencolor(colors[x%len(colors)])
+#     t.width(x//100+1)
+#     t.forward(x)
+#     t.left(angle)
+#
+# t.mainloop()
+
+#фрактальное дерево
+
+import turtle as t
+
+def tree(length):
+    if length<10:
+        return
+    t.forward(length)
+    t.left(30)
+    tree(length*0.7)
+    t.right(60)
+    tree(length*0.7)
+    t.left(30)
+    t.backward(length)
 
 
+t.left(90)
+tree(100)
+t.mainloop()
