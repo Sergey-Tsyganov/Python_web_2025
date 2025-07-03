@@ -709,8 +709,7 @@
 #
 
 
-
-#анонимные функции, однострочники, безымянные или lambda функции
+# анонимные функции, однострочники, безымянные или lambda функции
 # #lambda <аргументы>: <выражение>
 # word = ['В','арбан','списке','останутся','длина','которых','Больше','шести']
 # #is_longer_six = lambda word: len(word)>6
@@ -719,48 +718,143 @@
 # #подставляем вместо фунукции
 # #q = filter(lambda word: len(word)>6, word)
 # q= filter(lambda x: 'ан' in x, word)
-# print(list(q))
+# #
 
-words = ['В', 'арбан', 'списке', 'останутся', 'длина', 'которых', 'Больше', 'шести']
 
-# rez = list(map(lambda x:  x**2, range(3,16)))
+# Вот здесь правильно
+# Анонимные функции (однострочники, безымянные)
+# lambda-функции
+# lambda <аргументы>: <выражение>
+# словарные выражения
 
-# rez = [y**2 for y in range(3,16)]
-# print( rez)
-# res =[x for x  in words if len(x)>6]
-# print ( list(res))
-
-English_ABC = set([chr(ch) for ch in range(ord('a'),ord('z')+1)])
-Russian_ABC = set([chr(ch) for ch in range(ord('а'),ord('я')+1)]+['ё'])
-#print(English_ABC)
-#print(Russian_ABC)
-ABC = English_ABC^Russian_ABC
-#print(ABC)
-text ='привет, друг'
-# text = ''.join(filter(lambda x: x in ABC^{' '}, text))
-# print (text)
-# def remove_punktuation(txt):
-#     return ''.join(filter(lambda x: x in ABC^{' '}, txt))
-#
-# print(remove_punktuation(text))
-# t2=remove_punktuation(text)
-#
-# def get_words(txt):
-#     return remove_punktuation(txt).split
-# t3=str(get_words(t2))
-# print(t3)
-#
-# def long_words(txt,length=4):
-#      return filter(lambda word: len(word)>length, get_words(txt))
-# print(long_words(t3))
-# n
-# squares = {n:n**2 for n in range(1,10) if n%2==0}
+# numbers = [1, 2, 3, 4, 5]  # list(range(1, 6)
+# squares = {n: n ** 2 for n in numbers}
 # print(squares)
+#
+# squares = {n: n ** 2 for n in range(1, 10) if n % 2 == 0}
+# print(squares)
+#
+# source_dict = {
+#     'x': 1,
+#     'y': 2,
+#     'z': 3,
+# }
+#
+# dest_dict = {k: v * 2 for k, v in source_dict.items()}
+# print(dest_dict)
 
-source_dict = {
-    'x':1,
-    'y':2,
-    'z':3,
-}
-rez_dict = {k: v*2 for k,v in source_dict.items()}
-print(rez_dict)
+# fruits = ['ананас', 'банан', 'ежевика', 'малина', 'арбуз']
+#
+# print(sorted(fruits, key=lambda ch: len(ch)))
+
+
+# ENGLISH_ABC = [chr(ch) for ch in range(ord('a'), ord('z') + 1)]
+# RUSSIAN_ABC = [chr(ch) for ch in range(ord('а'), ord('я') + 1)] + ['ё']
+# ABC = (set(ENGLISH_ABC) ^ set(RUSSIAN_ABC) ^
+#        set([x.upper() for x in ENGLISH_ABC]) ^
+#        set([x.upper() for x in RUSSIAN_ABC]))
+# # print(ABC)
+# # print(ENGLISH_ABC)
+# # print(RUSSIAN_ABC)
+# txt = ('Я знаю, что я ничего не знаю. '
+#        'Но другие не знают и этого. А значит, я знаю больше, чем они.')
+#
+# d = {}
+#
+#
+# def remove_punctuation(text):
+#     return ''.join(filter(lambda x: x in ABC ^ {' '}, text))
+#
+#
+# def get_words(text: str) -> list:
+#     return remove_punctuation(text).split()
+#
+#
+# def long_words(text, length=4) -> filter:
+#     return filter(lambda word: len(word) >= length, get_words(text))
+#
+#
+# words = get_words(txt.lower())
+#
+# # Считаем частоту слов
+# for word in words:
+#     if word in d:
+#         d[word] += 1
+#     else:
+#         d[word] = 1
+#
+# res = {k: v for k, v in sorted(d.items(), key=lambda item: item[1], reverse=True)}
+#
+# for k, v in res.items():
+#     print(k, v)
+
+
+# Ключ сортировки
+# fruits = ['ананас', 'банан', 'ежевика', 'малина', 'арбуз']
+# print(sorted(fruits)) # обычная сортировка без ключей
+# print(sorted(fruits, key=lambda s: s[-1])) # с ключом
+# print(sorted(fruits, key=lambda s: (s[1], s[-1]))) # сначала по первой букве потом по последней
+# print(sorted(fruits, key=lambda s: (len(s), s[-1]))) # сначала по длине потомом по последней
+#
+# goods = [
+#     ['Утюг',1500, 10],
+#     ['Фен',1000,10],
+#     ['Телевизор', 1000,5]
+# ]
+# print(sorted(goods, key=lambda s: (s[1], s[2],s[0])))
+#
+# # проверка коллекций all any
+# # any - функцию применяем ко всем эл-ту коллекции и какой то вернул True
+# # alll- функцию применяем ко всем эл-ту коллекции и все вернул True
+#
+# print(all([1,2,3])) #- True все ненулевые
+# print(all([1,2,0])) #- False есть нулевые
+
+# words = 'один два три'.split()
+# # list_for_analyze = list(map(lambda x: len(x)- 3, words))
+# # print(list_for_analyze)
+# # print(all(list_for_analyze))
+#
+# # потоковый ввод sys.stdin
+# import sys
+# # for line in sys.stdin:
+# #     print(line)
+# data=sys.stdin.readlines()
+# data = [d.strip('\n') for d in data]
+# #print(data)
+# count = 1000
+# stroka =''
+# for i in data:
+#   #  print(i)
+#
+#     count1 = 0
+#     for j in i:
+#   #      print(j)
+#
+#         if j==' ':
+#             count1 +=1
+#  #           print('счетчик в линии',count1)
+#     if count>count1:
+#         count = count1
+#  #       print (count)
+#         stroka= i
+#         print(i)
+#
+# #print('количество мин' ,count, ' строка' ,stroka)
+# str_dib = stroka.split()
+# str_sorted = sorted(str_dib)
+# print(*str_sorted,  sep='-')
+
+# рекурсия - функция вызывает сама себя
+
+# def fact1(x):
+#     if x==1:
+#         return 1
+#     return x*fact1(x-1)
+#
+#
+# print(fact1(100))
+
+
+
+
