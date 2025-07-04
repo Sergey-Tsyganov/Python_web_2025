@@ -934,40 +934,47 @@
 #
 #
 # t.left(90)
-# tree(100)
-# t.mainloop()
-
-
-# модули
-# дз в виде картинки
-# Встроенные библиотеки подробно разобрать
-
-import sys
-from os import lstat
-
-strings = [d.strip('\n') for d in sys.stdin.readlines()]
-length = len(strings)  # сколько строк
-rem = length % 3
-
-if rem:
-    strings = strings[:length - rem]
-
-for x in range(0, length - rem, 3):
-    summ = sum(len(a) for a in strings[x:x + 3])
-    result = []
-    for s in strings[x:x + 3]:
-        temp = s.lower().split()
-        result += filter(lambda a: len(a) % 2 == summ % 2, temp)
-    result = sorted(set(map(lambda b: b.capitalize(), result)))[:5]
-    print(*result, sep='. ')
-
-#функция sum
+# # tree(100)
+# # t.mainloop()
+#
+#
+# # модули
+# # дз в виде картинки
+# # Встроенные библиотеки подробно разобрать
+#
+# import sys
+# from os import lstat
+#
+# strings = [d.strip('\n') for d in sys.stdin.readlines()]
+# length = len(strings)  # сколько строк
+# rem = length % 3
+#
+# if rem:
+#     strings = strings[:length - rem]
+#
+# for x in range(0, length - rem, 3):
+#     summ = sum(len(a) for a in strings[x:x + 3])
+#     result = []
+#     for s in strings[x:x + 3]:
+#         temp = s.lower().split()
+#         result += filter(lambda a: len(a) % 2 == summ % 2, temp)
+#     result = sorted(set(map(lambda b: b.capitalize(), result)))[:5]
+#     print(*result, sep='. ')
+#
+# #функция sum
 sum([1,2,3]) # только итерируемый объект
 # аналогично этому
 # for x in lst:
 #     res +=x
 # то же самое in max
 
-# встроенные билиотеки
-
+# встроенные билиотеки/модули
+#PyPI - Python Package Index (pupi.org) # сторонние библиотеки огромный ассортимент
+import math as m
+from math import *
+# print('Пи',m.pi)
+# from math import pi, sqrt
+# print(pi, sqrt(pi))
+print(dir(m))
+print(help(m.acosh))
 
