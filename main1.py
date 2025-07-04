@@ -707,7 +707,7 @@
 # rez=''.join(squares2)
 # print(rez)
 #
-
+import time
 
 # анонимные функции, однострочники, безымянные или lambda функции
 # #lambda <аргументы>: <выражение>
@@ -969,12 +969,91 @@ sum([1,2,3]) # только итерируемый объект
 # то же самое in max
 
 # встроенные билиотеки/модули
-#PyPI - Python Package Index (pupi.org) # сторонние библиотеки огромный ассортимент
-import math as m
-from math import *
-# print('Пи',m.pi)
-# from math import pi, sqrt
-# print(pi, sqrt(pi))
-print(dir(m))
-print(help(m.acosh))
 
+# math
+
+# #PyPI - Python Package Index (pupi.org) # сторонние библиотеки огромный ассортимент
+# import math as m
+# from math import *
+# # print('Пи',m.pi)
+# # from math import pi, sqrt
+# # print(pi, sqrt(pi))
+# print(dir(m))
+# print(help(m.acosh)
+
+#модуль random  генерация случайных чисел
+import random as r
+# lst = [1,2,3,4,5,6,7,8,9]
+#print(dir(random))
+#print(random.random())
+#for i in range(10): print(random.randint(1,10))
+#for i in range(10): print(random.randrange(0,10,2))
+# print(lst[random.randint(0,len(lst)-1)])
+# print(random.choice(['орел','решка']))
+# # кроме словаря и множества
+
+# dicti = {
+#     'a':1,
+#     'b':2,
+#     'c':3,
+# }
+# keys = list(dicti.keys())
+# key = random.choice(keys)
+# print(dicti[key])
+
+
+# zara = ['\u2680','\u2681','\u2682','\u2683','\u2684','\u2685',]
+# for _ in range(10):
+#     print (r.choice(zara),r.choice(zara))
+#     help(print)
+
+# lst = [1,2,3,4,5,6,7,8,9]
+# raz= r.sample(lst,k=5)
+# print(raz)
+# res4=[]
+# abc = 'qwerrtyyuiokjhgf'
+# znaki = '@#$%^&*'
+# cifry = '1234567890'
+# lst = list(abc)
+# res1 = ''.join(lst[:8])
+# res2 = ''.join(znaki[:2])
+# res3 = ''.join(cifry[:2])
+# res4 =res1+res2+res3
+# print(res4)
+# res4 =list(res4)
+# res5= list(r.shuffle((res4)))
+# print(res5)
+
+
+# библиотека времени и даты
+import datetime as dt
+
+# print(dt.datetime.now())
+# print(dt.datetime.now().date())
+#
+# print(dt.datetime.now().time())
+# print(dt.datetime.now().time())
+# ftime= time.strftime('%d/%m/%y')
+# print(ftime)
+# my_time =dt.time(15,27)
+# #print (my_time)
+# my_date =dt.date(2025,6,15)
+# # print (my_date)
+# my_datetime = dt.datetime.combine(my_date,my_time)
+# print(my_datetime)
+#
+# day1= dt.date(2052,7,6)
+# day2= dt.date(2052,7,7)
+# delta = day2 - day1
+# print(delta)
+
+
+#pprint  выводит данные в читабельном виде
+import pprint
+from pprint import pprint
+matrix=[
+    [1,2,3],
+    [4,4,5],
+    [6,7,8]
+]
+pprint(matrix)
