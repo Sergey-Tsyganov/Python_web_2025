@@ -909,30 +909,65 @@
 # t.bgcolor('black')
 # angle = 360/len( colors) -1
 #
-# for x in range (200):
-#     t.pencolor(colors[x%len(colors)])
-#     t.width(x//100+1)
-#     t.forward(x)
-#     t.left(angle)
+# # for x in range (200):
+# #     t.pencolor(colors[x%len(colors)])
+# #     t.width(x//100+1)
+# #     t.forward(x)
+# #     t.left(angle)
+# #
+# # t.mainloop()
 #
+# #фрактальное дерево
+#
+# import turtle as t
+#
+# def tree(length):
+#     if length<10:
+#         return
+#     t.forward(length)
+#     t.left(30)
+#     tree(length*0.7)
+#     t.right(60)
+#     tree(length*0.7)
+#     t.left(30)
+#     t.backward(length)
+#
+#
+# t.left(90)
+# tree(100)
 # t.mainloop()
 
-#фрактальное дерево
 
-import turtle as t
+# модули
+# дз в виде картинки
+# Встроенные библиотеки подробно разобрать
 
-def tree(length):
-    if length<10:
-        return
-    t.forward(length)
-    t.left(30)
-    tree(length*0.7)
-    t.right(60)
-    tree(length*0.7)
-    t.left(30)
-    t.backward(length)
+import sys
+from os import lstat
+
+strings = [d.strip('\n') for d in sys.stdin.readlines()]
+length = len(strings)  # сколько строк
+rem = length % 3
+
+if rem:
+    strings = strings[:length - rem]
+
+for x in range(0, length - rem, 3):
+    summ = sum(len(a) for a in strings[x:x + 3])
+    result = []
+    for s in strings[x:x + 3]:
+        temp = s.lower().split()
+        result += filter(lambda a: len(a) % 2 == summ % 2, temp)
+    result = sorted(set(map(lambda b: b.capitalize(), result)))[:5]
+    print(*result, sep='. ')
+
+#функция sum
+sum([1,2,3]) # только итерируемый объект
+# аналогично этому
+# for x in lst:
+#     res +=x
+# то же самое in max
+
+# встроенные билиотеки
 
 
-t.left(90)
-tree(100)
-t.mainloop()
