@@ -1049,11 +1049,49 @@ import datetime as dt
 
 
 #pprint  выводит данные в читабельном виде
-import pprint
-from pprint import pprint
-matrix=[
-    [1,2,3],
-    [4,4,5],
-    [6,7,8]
-]
-pprint(matrix)
+
+# from pprint import pprint
+# matrix=[
+#     [1,2,3],
+#     [4,4,5],
+#     [6,7,8]
+# ]
+# pprint(matrix)
+
+# внешние библиотеки
+# правила хорошего тона - создание файла requrements - tools -Sync Pythob
+# или работает лучше
+# pip freeze > requirements.txt - создание файла зависимостей
+# pip install -r requirements.txt -  установка списка библиотек
+
+#графика
+# PIL Python imagine library - подушка
+# работает с растровыми изображениями
+#RGB - модель три цвета от 0 до 255
+
+
+#thumbnail - уменьшенная картинка с малой памятью
+from PIL import Image
+
+image = Image.open('images/vinny.jpg')
+print (image.size)
+x,y = image.size
+mode = image.mode
+#
+# pixels = image.load()
+# print(f'x={x}, y={y}, режим {mode}')
+# for i in range(x):
+#     for j in range(y):
+#        r,g,b = pixels[i,j]
+#        pixels[i,j]= int((r+g+b)/3),int((r+g+b)/3),int((r+g+b)/3)
+#image_rotate = image.rotate(45)
+#image_flip=image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+#image_flip.save('images/vinny4.jpg')
+# вырезание
+#cropped = image.crop((200,0,700,300))
+#cropped.save('images/vinny5.jpg')
+# ресайзинг - соотношение сторон нужно контролировать
+#resized = image.resize((100,100))
+#resized.save('images/vinny6.jpg')
+
+#Создание риснков
