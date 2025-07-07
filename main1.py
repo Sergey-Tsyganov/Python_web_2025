@@ -709,6 +709,8 @@
 #
 import time
 
+from PIL.ImageFont import ImageFont
+
 # анонимные функции, однострочники, безымянные или lambda функции
 # #lambda <аргументы>: <выражение>
 # word = ['В','арбан','списке','останутся','длина','которых','Больше','шести']
@@ -1071,14 +1073,14 @@ import datetime as dt
 
 
 #thumbnail - уменьшенная картинка с малой памятью
-from PIL import Image
+#from PIL import Image
 
-image = Image.open('images/vinny.jpg')
-print (image.size)
-x,y = image.size
-mode = image.mode
-#
-# pixels = image.load()
+# image = Image.open('images/vinny.jpg')
+# print (image.size)
+# x,y = image.size
+# mode = image.mode
+# #
+# # pixels = image.load()
 # print(f'x={x}, y={y}, режим {mode}')
 # for i in range(x):
 #     for j in range(y):
@@ -1091,7 +1093,72 @@ mode = image.mode
 #cropped = image.crop((200,0,700,300))
 #cropped.save('images/vinny5.jpg')
 # ресайзинг - соотношение сторон нужно контролировать
-#resized = image.resize((100,100))
-#resized.save('images/vinny6.jpg')
+# #resized = image.resize((100,100))
+# #resized.save('images/vinny6.jpg')
+# from PIL import Image
+# from PIL import ImageDraw
+# #Создание риснков
+#
+# kvadrat = Image.new('RGB',(600,400),(0,0,255))
+# draw = ImageDraw.Draw(kvadrat)
+# draw.line((0,0,599,399), fill=(255,0,0), width=(5))
+# draw.line((0,400,599,0), fill=(255,0,0), width=(5))
+# kvadrat.save('images/kvadrat.jpg')
+# draw.save('images/kvadrat2.jpg')
 
-#Создание риснков
+import pprint
+
+
+# data = {
+#     "name": "John",
+#     "age": 30,
+#     "city": "New York",
+#     "hobbies": ["reading", "playing guitar", "travelling"],
+# }
+# pprint.pprint(data, width=50, indent=4)
+# pprint.pprint(data)
+# from PIL  import Image
+# from PIL import ImageDraw
+# from PIL import  ImageFont
+# kvadrat2 = Image.new('RGB',(600,400),(0,0,255))
+# draw = ImageDraw.Draw(kvadrat2)
+# font = ImageFont.truetype(10)
+# draw.textbbox(xy=(100,100),text='ДОБРОЕ УТРО',font_size=20,font=font)
+# kvadrat2.save('images/kvadrat2.jpg')
+
+# Внешние библиотеки
+# Графика
+# PIL - Python Imagine Library
+# pip freeze > requirements.txt - создание файла зависимости
+# pip install -r requirements.txt - установка списка библиотек
+from PIL import Image, ImageDraw, ImageFont
+
+# https://fontsforyou.com/ru/specific-fonts/ttf-fonts/languageru
+W = 600
+H = 400
+
+image = Image.new('RGB',
+                  (W, H),
+                  (0, 163, 232))
+
+draw = ImageDraw.Draw(image)
+
+text = 'Солнечный день'
+# draw.ellipse((470, -120, 800, 120), outline='yellow', fill='yellow')
+draw.circle((600, 0), 100, fill='yellow')
+font = ImageFont.truetype(
+    font='fonts/PfdintextcompproItalic.ttf',  # можно использовать любой установленный шрифт
+    size=50
+)
+# Получаем размеры текста
+_, _, w, h = draw.textbbox((0, 0), text, font=font)
+
+# Рассчитываем позицию для центрирования
+x = (W - w) // 2
+y = (H - h) // 2
+
+draw.text((x, y), text, fill=(255, 255, 0), font=font)
+
+image.save('images/sunny_day.jpg')
+
+image.show()
