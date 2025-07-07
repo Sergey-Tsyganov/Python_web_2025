@@ -1175,14 +1175,18 @@ import pprint
 
 
 # Фильтры
-from PIL import Image, ImageFilter, ImageEnhance
-orig = Image.open('images/vinny.jpg')
-# Размытие
-#blur_image = orig.filter(ImageFilter.BLUR)
-#blur_image = orig.filter(ImageFilter.GaussianBlur(radius=8))
-#Усиление резкости
-enchancer = ImageEnhance.Sharpness(orig)
-sharpened_image= enchancer.enhance(4)
+# from PIL import Image, ImageFilter, ImageEnhance
+# orig = Image.open('images/vinny.jpg')
+# # Размытие
+# #blur_image = orig.filter(ImageFilter.BLUR)
+# #blur_image = orig.filter(ImageFilter.GaussianBlur(radius=8))
+# #Усиление резкости
+# enchancer = ImageEnhance.Sharpness(orig)
+# sharpened_image= enchancer.enhance(4)
+#
+# sharpened_image.show()
+#
 
-sharpened_image.show()
 
+# Работа с документами
+# DOCx - python-docx
