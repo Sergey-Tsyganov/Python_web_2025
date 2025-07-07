@@ -1131,34 +1131,58 @@ import pprint
 # PIL - Python Imagine Library
 # pip freeze > requirements.txt - создание файла зависимости
 # pip install -r requirements.txt - установка списка библиотек
-from PIL import Image, ImageDraw, ImageFont
+# from PIL import Image, ImageDraw, ImageFont
+#
+# # https://fontsforyou.com/ru/specific-fonts/ttf-fonts/languageru
+# W = 600
+# H = 400
+#
+# image = Image.new('RGB',
+#                   (W, H),
+#                   (0, 163, 232))
+#
+# draw = ImageDraw.Draw(image)
+#
+# text = 'Солнечный день'
+# # draw.ellipse((470, -120, 800, 120), outline='yellow', fill='yellow')
+# draw.circle((600, 0), 100, fill='yellow')
+# font = ImageFont.truetype(
+#     font='fonts/PfdintextcompproItalic.ttf',  # можно использовать любой установленный шрифт
+#     size=50
+# )
+# # Получаем размеры текста
+# _, _, w, h = draw.textbbox((0, 0), text, font=font)
+#
+# # Рассчитываем позицию для центрирования
+# x = (W - w) // 2
+# y = (H - h) // 2
+#
+# draw.text((x, y), text, fill=(255, 255, 0), font=font)
+#
+# image.save('images/sunny_day.jpg')
+#
+# #image.show()
+#
+#
+# orig = Image.open('images/sunny_day.jpg').convert('RGB')
+#
+# up = orig.crop((0,0,600,200)) # отрезаем верх часть
+# down = orig.crop((0,200,600,400))
+# new = Image.new('RGB',(600,400))
+# new.paste(down,(0,0))
+# new.paste(up,(0,200))
+# new.show()
 
-# https://fontsforyou.com/ru/specific-fonts/ttf-fonts/languageru
-W = 600
-H = 400
 
-image = Image.new('RGB',
-                  (W, H),
-                  (0, 163, 232))
+# Фильтры
+from PIL import Image, ImageFilter, ImageEnhance
+orig = Image.open('images/vinny.jpg')
+# Размытие
+#blur_image = orig.filter(ImageFilter.BLUR)
+#blur_image = orig.filter(ImageFilter.GaussianBlur(radius=8))
+#Усиление резкости
+enchancer = ImageEnhance.Sharpness(orig)
+sharpened_image= enchancer.enhance(4)
 
-draw = ImageDraw.Draw(image)
+sharpened_image.show()
 
-text = 'Солнечный день'
-# draw.ellipse((470, -120, 800, 120), outline='yellow', fill='yellow')
-draw.circle((600, 0), 100, fill='yellow')
-font = ImageFont.truetype(
-    font='fonts/PfdintextcompproItalic.ttf',  # можно использовать любой установленный шрифт
-    size=50
-)
-# Получаем размеры текста
-_, _, w, h = draw.textbbox((0, 0), text, font=font)
-
-# Рассчитываем позицию для центрирования
-x = (W - w) // 2
-y = (H - h) // 2
-
-draw.text((x, y), text, fill=(255, 255, 0), font=font)
-
-image.save('images/sunny_day.jpg')
-
-image.show()
