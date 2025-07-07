@@ -710,6 +710,7 @@
 import time
 
 from PIL.ImageFont import ImageFont
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 # анонимные функции, однострочники, безымянные или lambda функции
 # #lambda <аргументы>: <выражение>
@@ -1187,6 +1188,47 @@ import pprint
 # sharpened_image.show()
 #
 
-
+#pip freeze > requirements.txt
+#pip install -r requirements.txt
 # Работа с документами
 # DOCx - python-docx
+from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import Cm, Inches,Mm,Pt # ДЛЯ РАЗМЕРОВ
+
+doc = Document() # создание экземпляра документа
+# добавление заголовка
+doc.add_heading('Отчет за месяц',1)
+#добавление абзаца
+paragraph = doc.add_paragraph()
+paragraph = doc.add_paragraph('В этом отчете представлены')
+paragraph.add_run(' ключевые показатели').bold = True
+
+# новый абзац для списка
+paragraph = doc.add_paragraph()
+paragraph_format = paragraph.paragraph_format
+paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+#маркированный списко
+paragraph= doc.add_paragraph('Первый пункт', style = 'List Bullet')
+paragraph= doc.add_paragraph('Второй пункт', style = 'List Bullet')
+#нумерованный списко
+paragraph= doc.add_paragraph('Первый пункт', style = 'List Number')
+paragraph= doc.add_paragraph('Второй пункт', style = 'List Number')
+
+
+
+paragraph = doc.add_paragraph()
+# Таблица
+table = doc.add_table(rows = 3, cols = 3)
+# Заполняем
+for i, row in enumerate(table.rows):
+    for j, cell in enumerate(table.columns):
+        cell.text = f'Строка {i}, Столбец {j}'
+
+
+
+paragraph = doc.add_paragraph()
+doc.add_picture('images/vinny.jpg', width =Mm(105))
+
+
+doc.save('docs/report.docx')
