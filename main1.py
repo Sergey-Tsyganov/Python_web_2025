@@ -1,4 +1,5 @@
 # Запись данных в существующий файл
+from PIL.SpiderImagePlugin import iforms
 from openpyxl import load_workbook
 
 # Открываем (загружаем) рабочую книгу
@@ -29,17 +30,66 @@ from openpyxl import load_workbook
 #wb.save('docs/employees.xlsx')
 
 #чтение данных
-from openpyxl import load_workbook
-wb = load_workbook('docs/employees.xlsx')
-ws=wb.active
-rows_count = ws.max_row
-for row in ws.iter_rows(values_only=True):
-    fio, pos, dept = row
-    print(f'Фамилия:{fio},Позиция:{pos}, Отдел: {dept}')
-    #print(row)
-ws['A1']=2
-ws['A2']=3
-#ws['A3']= "=A1+A2"
-ws['A3']= "=корень(A1+A2)"
-ws['A4']= "=Sum(A1+A2)"
-wb.save('docs/employees2.xlsx')
+# from openpyxl import load_workbook
+# wb = load_workbook('docs/employees.xlsx')
+# ws=wb.active
+# rows_count = ws.max_row
+# for row in ws.iter_rows(values_only=True):
+#     fio, pos, dept = row
+#     print(f'Фамилия:{fio},Позиция:{pos}, Отдел: {dept}')
+#     #print(row)
+# ws['A1']=2
+# ws['A2']=3
+# #ws['A3']= "=A1+A2"
+# ws['A3']= "=корень(A1+A2)"
+# ws['A4']= "=Sum(A1+A2)"
+# wb.save('docs/employees2.xlsx')
+
+
+# Пишем свои модули
+# lib
+
+# Подключаем
+#from . lib import summ  - из текущей директории
+#from .. lib import summ  - из директории выще
+#from .lib import summ  - относительный импорт
+
+# import lib
+# if __name__ == '__main__':
+#     c = lib.summ(2,3)
+#     d= lib.diff(4,2)
+# print( c,d)
+
+#print(__name__)
+
+# Пакеты
+# from new import greet
+# from new import sum
+# print (sum(2,3,4))
+# print(greet('Вася!'))
+# #print(new.module._hidden_function())
+# print(new.__init__.py.__autor__)
+#
+
+
+
+# Файлы
+# name.txt
+# t - текстовые файлы( txt, xml, html)
+# b - бинарные файлы(Jpg, avi mp3
+# работа с текстовыми файлами
+# w - на запись/создание(если файл был то стирается все
+# a - если не существует создается, если существует то запись идет в конец
+# r - читать - файл должен существовать
+fo = open('info.txt','wt', encoding='utf-8')
+print (fo.mode)
+print (fo.encoding)
+print (fo.name)
+# записываем в файл
+count = fo.write('Этот текст будет в файле')
+# или
+print('в файле хаписано', count, 'байт')
+
+fo.close()
+
+#ДЗ методичка модуль
