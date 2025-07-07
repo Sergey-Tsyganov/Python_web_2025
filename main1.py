@@ -1196,39 +1196,57 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Cm, Inches,Mm,Pt # ДЛЯ РАЗМЕРОВ
 
-doc = Document() # создание экземпляра документа
-# добавление заголовка
-doc.add_heading('Отчет за месяц',1)
-#добавление абзаца
-paragraph = doc.add_paragraph()
-paragraph = doc.add_paragraph('В этом отчете представлены')
-paragraph.add_run(' ключевые показатели').bold = True
+# doc = Document() # создание экземпляра документа
+# # добавление заголовка
+# doc.add_heading('Отчет за месяц',1)
+# #добавление абзаца
+# paragraph = doc.add_paragraph()
+# paragraph = doc.add_paragraph('В этом отчете представлены')
+# paragraph.add_run(' ключевые показатели').bold = True
+#
+# # новый абзац для списка
+# paragraph = doc.add_paragraph()
+# paragraph_format = paragraph.paragraph_format
+# paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
+# #маркированный списко
+# paragraph= doc.add_paragraph('Первый пункт', style = 'List Bullet')
+# paragraph= doc.add_paragraph('Второй пункт', style = 'List Bullet')
+# #нумерованный списко
+# paragraph= doc.add_paragraph('Первый пункт', style = 'List Number')
+# paragraph= doc.add_paragraph('Второй пункт', style = 'List Number')
+#
+#
+#
+# paragraph = doc.add_paragraph()
+# # Таблица
+# table = doc.add_table(rows = 3, cols = 3)
+# # Заполняем
+# for i, row in enumerate(table.rows):
+#     for j, cell in enumerate(table.columns):
+#         cell.text = f'Строка {i}, Столбец {j}'
+#
+#
+#
+# paragraph = doc.add_paragraph()
+# doc.add_picture('images/vinny.jpg', width =Mm(105))
+#
+#
+# doc.save('docs/report.docx')
 
-# новый абзац для списка
-paragraph = doc.add_paragraph()
-paragraph_format = paragraph.paragraph_format
-paragraph_format.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
-#маркированный списко
-paragraph= doc.add_paragraph('Первый пункт', style = 'List Bullet')
-paragraph= doc.add_paragraph('Второй пункт', style = 'List Bullet')
-#нумерованный списко
-paragraph= doc.add_paragraph('Первый пункт', style = 'List Number')
-paragraph= doc.add_paragraph('Второй пункт', style = 'List Number')
+#Заполнение шаблона
 
+# Загрузка шаблона
+from docxtpl import DocxTemplate
+doc = DocxTemplate('docs/template.docx')
 
+# Данные для подстановки
 
-paragraph = doc.add_paragraph()
-# Таблица
-table = doc.add_table(rows = 3, cols = 3)
-# Заполняем
-for i, row in enumerate(table.rows):
-    for j, cell in enumerate(table.columns):
-        cell.text = f'Строка {i}, Столбец {j}'
+content = {
+    'company': 'Фортуна',
+    'employee':'Петров Д.И',
+    'position':'менеджер',
+    'date':'01.01.2025'
+}
 
-
-
-paragraph = doc.add_paragraph()
-doc.add_picture('images/vinny.jpg', width =Mm(105))
-
-
-doc.save('docs/report.docx')
+doc.render(content)
+doc.save('docs/about.docx')
