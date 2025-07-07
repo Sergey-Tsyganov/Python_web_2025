@@ -92,20 +92,31 @@ from openpyxl import load_workbook
 #
 # fo.close()
 
+# fo = open('info.txt','rt', encoding='utf-8')
+# text = fo.read(11) # в скобках сколько байт читать, если нет то столько и считает
+# text1 = fo.read(6)
+# text += fo.read()
+#
+#
+# print (text)
+# #print (text1)
+# #print (text2)
+# #print (text3)
+
+# fo = open('info.txt','at', encoding='utf-8')
+# #fo.write(' Кукареку')
+# print('\nА вот с новой строки', file =fo)
+#
+# fo.close()
+#ДЗ методичка модуль
 fo = open('info.txt','rt', encoding='utf-8')
-text = fo.read(11) # в скобках сколько байт читать, если нет то столько и считает
-text1 = fo.read(6)
-text += fo.read()
+#fo.write(' Кукареку')
 
+# while text := fo.readline():
+#     print(text.rstrip('\n'))
 
-print (text)
-#print (text1)
-#print (text2)
-#print (text3)
-
-
-
-
+text = fo.read()
+lst = text.splitlines()
+print (lst)
 
 fo.close()
-#ДЗ методичка модуль
