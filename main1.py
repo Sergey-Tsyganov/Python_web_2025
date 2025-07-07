@@ -80,16 +80,32 @@ from openpyxl import load_workbook
 # работа с текстовыми файлами
 # w - на запись/создание(если файл был то стирается все
 # a - если не существует создается, если существует то запись идет в конец
-# r - читать - файл должен существовать
-fo = open('info.txt','wt', encoding='utf-8')
-print (fo.mode)
-print (fo.encoding)
-print (fo.name)
-# записываем в файл
-count = fo.write('Этот текст будет в файле')
-# или
-print('в файле хаписано', count, 'байт')
+# r - читать - файл должен существовать по умолчанию
+# fo = open('info.txt','wt', encoding='utf-8')
+# print (fo.mode)
+# print (fo.encoding)
+# print (fo.name)
+# # записываем в файл
+# count = fo.write('Этот текст будет в файле')
+# # или
+# print('в файле хаписано', count, 'байт')
+#
+# fo.close()
+
+fo = open('info.txt','rt', encoding='utf-8')
+text = fo.read(11) # в скобках сколько байт читать, если нет то столько и считает
+text1 = fo.read(6)
+text += fo.read()
+
+
+print (text)
+#print (text1)
+#print (text2)
+#print (text3)
+
+
+
+
 
 fo.close()
-
 #ДЗ методичка модуль
