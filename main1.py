@@ -109,14 +109,34 @@ from openpyxl import load_workbook
 #
 # fo.close()
 #ДЗ методичка модуль
-fo = open('info.txt','rt', encoding='utf-8')
-#fo.write(' Кукареку')
 
-# while text := fo.readline():
-#     print(text.rstrip('\n'))
+# открытие с менеджером контекста
+# with open('info.txt','rt', encoding='utf-8') as fo:
+#     text = fo.read()
+#     lst = text.splitlines()
+#     print (lst)
+# # Проследит чтобы файл закрылся
 
-text = fo.read()
-lst = text.splitlines()
-print (lst)
+#fo.close()
 
-fo.close()
+import os # модуль управления операционной системой
+# #os.mkdir ('libs')
+# # мягкое создание директории вместо пред вар. елси дир уже есть то не страшно
+# os.makedirs ('libs', exist_ok='True')
+# # удаление
+# # проверка существования директории
+# if (os.path.exists('libs')):
+#     os.rmdir('libs')
+# # рабочаяя директория
+# path = os.getcwd()
+# print(path)
+# # поменять дир
+# os.chdir(path+'/images')
+# print(os.getcwd())
+#
+# # на уровень выше
+# os.chdir('..')
+path = os.getcwd()
+os.chdir(path+'/images')
+all_files = [f for f in os.listdir('.') if f.startswith('sun')]
+print(all_files)
