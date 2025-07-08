@@ -136,7 +136,18 @@ import os # модуль управления операционной сист�
 #
 # # на уровень выше
 # os.chdir('..')
-path = os.getcwd()
-os.chdir(path+'/images')
-all_files = [f for f in os.listdir('.') if f.startswith('sun')]
-print(all_files)
+# path = os.getcwd()
+# os.chdir(path+'/images')
+# all_files = [f for f in os.listdir('.') if f.startswith('sun')]
+# print(all_files)
+
+# чтение последовательностей из текстового файла их сортировка
+# res= []
+# with open('primer.txt','rt', encoding='utf-8') as f:
+#     while temp :=f.readline().rstrip('\n'):
+#         res +=temp.split(',')
+# #res= list(map(lambda x:x.rstrip('\n'),res))
+# #res = set(res)
+#
+# res = sorted(int(x) for x in set(res))
+# print(res)
