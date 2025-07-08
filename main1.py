@@ -169,8 +169,35 @@ import os # модуль управления операционной сист�
 #     d= pickle.load(p)
 #
 # pprint.pprint(d,width=15)
+# ссылка на файл с директориями
+# from path_lib import *
+#
+# print(img_dir)
 
-from path_lib import *
+# Исключения
+# try:
+#   что собираемся делать
+# exсept исключение - обрабатываем исключениЙ
+# finally  выполняется в любом случае
 
-print(img_dir)
+#print(name)
+#открытие несуществующего файла
+flag = False
+try:
+    fo = open('inform.txt', encoding= 'utf-8' )
+    print(fo.read())
+    fo.close()
+except FileNotFoundError:
+    fo = open('inform.txt','wt', encoding='utf-8')
+    flag = True
+    # print('такого файла нет и он создан с параметрами по умолчанию')
+    # with open('inform.txt','wt',encoding='utf-8') as f:
+    #    f.write('По умолчанию')
+else:
 
+
+finally:
+    if Flag:
+        fo.write('По умолчанию')
+        fo.close()
+        print('Продолжаем работать')
