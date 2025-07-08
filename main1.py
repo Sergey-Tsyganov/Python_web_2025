@@ -182,22 +182,57 @@ import os # модуль управления операционной сист�
 
 #print(name)
 #открытие несуществующего файла
-flag = False
-try:
-    fo = open('inform.txt', encoding= 'utf-8' )
-    print(fo.read())
-    fo.close()
-except FileNotFoundError:
-    fo = open('inform.txt','wt', encoding='utf-8')
-    flag = True
-    # print('такого файла нет и он создан с параметрами по умолчанию')
-    # with open('inform.txt','wt',encoding='utf-8') as f:
-    #    f.write('По умолчанию')
-else:
+# flag = False
+# try:
+#     fo = open('inform.txt', encoding= 'utf-8' )
+#     print(fo.read())
+#     fo.close()
+# except FileNotFoundError:
+#     fo = open('inform.txt','wt', encoding='utf-8')
+#     flag = True
+#     # print('такого файла нет и он создан с параметрами по умолчанию')
+#     # with open('inform.txt','wt',encoding='utf-8') as f:
+#     #    f.write('По умолчанию')
+# else:
+#
+#
+# finally:
+#     if Flag:
+#         fo.write('По умолчанию')
+#         fo.close()
+#         print('Продолжаем работать')
 
 
-finally:
-    if Flag:
-        fo.write('По умолчанию')
-        fo.close()
-        print('Продолжаем работать')
+# А как сдлать если мы не знаем что возникнет
+
+#print('остаток от деления')
+# try:
+#     value = int(input('а что делим 10'))
+#     res = 10%value
+#     print('Остаток', res)
+# except ZeroDivisionError :
+#     print('На ноль делить нельзя')
+# except ValueError:
+#     print(' Только число')
+# except Exception as exp:
+#     print('Произошло исключение', exp.__class__.__name__, exp)
+# бросаемся исключениями throw( в питоне raise)
+# max_val=10
+# min_val=0
+# try:
+#     val = int(input(f'Значение от {min_val} до {max_val}: '))
+#     if not min_val<val<max_val:
+#         raise ValueError('введенное числ вне диапазона')
+#     print(f'Введенное число {val} лежит в диапазоне')
+# except ValueError as exp:
+#     print
+
+
+# Утверждения (assertions)
+# try:
+#     text = input ('введите текст')
+#     assert len(text)>3
+# except AssertionError:
+#     print('Слишком короткий текст')
+
+
