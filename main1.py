@@ -151,3 +151,21 @@ import os # модуль управления операционной сист�
 #
 # res = sorted(int(x) for x in set(res))
 # print(res)
+
+#сериализация и десериализация
+import pickle
+import pprint
+# d ={
+#     'стол': 'table',
+#     'стул':'chair',
+# }
+# сериализация
+# with open('dickfile.dat','wb') as p:
+#     # дамп файл словаря d  в p
+#     pickle.dump(d,p)
+
+# десериализация
+with open('dickfile.dat','rb')  as p:
+    d= pickle.load(p)
+
+pprint.pprint(d,width=15)
