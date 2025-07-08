@@ -153,8 +153,8 @@ import os # модуль управления операционной сист�
 # print(res)
 
 #сериализация и десериализация
-import pickle
-import pprint
+# import pickle
+# import pprint
 # d ={
 #     'стол': 'table',
 #     'стул':'chair',
@@ -165,7 +165,12 @@ import pprint
 #     pickle.dump(d,p)
 
 # десериализация
-with open('dickfile.dat','rb')  as p:
-    d= pickle.load(p)
+# with open('dickfile.dat','rb')  as p:
+#     d= pickle.load(p)
+#
+# pprint.pprint(d,width=15)
 
-pprint.pprint(d,width=15)
+from path_lib import *
+
+print(img_dir)
+
