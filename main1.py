@@ -422,10 +422,15 @@ import re
 # test_str= set(test_str)
 # #result = re.split(pattern,test_str)
 # print(test_str)
-import re
-import requests
-pattern = r'<img[^>]+src="([^">]+)"'
-html = requests.get('https://skillbox.ru').text
-#print (html)
-result = re.findall(pattern,html)
-print(result)
+# import re
+# import requests
+# pattern = r'<img[^>]+src="([^">]+)"'
+# html = requests.get('https://skillbox.ru').text
+# #print (html)
+# result = re.findall(pattern,html)
+# print(result)
+
+#######################
+# Объектно-ориентированное программирование
+########################
+
