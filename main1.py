@@ -1,6 +1,6 @@
 # Запись данных в существующий файл
-from PIL.SpiderImagePlugin import iforms
-from openpyxl import load_workbook
+# from PIL.SpiderImagePlugin import iforms
+# from openpyxl import load_workbook
 
 # Открываем (загружаем) рабочую книгу
 # wb = load_workbook('docs/report.xlsx')
@@ -27,9 +27,9 @@ from openpyxl import load_workbook
 #     ws.cell(row=row, column=2, value=data[1])
 #     ws.cell(row=row, column=3, value=data[2])
 
-#wb.save('docs/employees.xlsx')
+# wb.save('docs/employees.xlsx')
 
-#чтение данных
+# чтение данных
 # from openpyxl import load_workbook
 # wb = load_workbook('docs/employees.xlsx')
 # ws=wb.active
@@ -50,9 +50,9 @@ from openpyxl import load_workbook
 # lib
 
 # Подключаем
-#from . lib import summ  - из текущей директории
-#from .. lib import summ  - из директории выще
-#from .lib import summ  - относительный импорт
+# from . lib import summ  - из текущей директории
+# from .. lib import summ  - из директории выще
+# from .lib import summ  - относительный импорт
 
 # import lib
 # if __name__ == '__main__':
@@ -60,7 +60,7 @@ from openpyxl import load_workbook
 #     d= lib.diff(4,2)
 # print( c,d)
 
-#print(__name__)
+# print(__name__)
 
 # Пакеты
 # from new import greet
@@ -70,7 +70,6 @@ from openpyxl import load_workbook
 # #print(new.module._hidden_function())
 # print(new.__init__.py.__autor__)
 #
-
 
 
 # Файлы
@@ -108,7 +107,7 @@ from openpyxl import load_workbook
 # print('\nА вот с новой строки', file =fo)
 #
 # fo.close()
-#ДЗ методичка модуль
+# ДЗ методичка модуль
 
 # открытие с менеджером контекста
 # with open('info.txt','rt', encoding='utf-8') as fo:
@@ -117,9 +116,9 @@ from openpyxl import load_workbook
 #     print (lst)
 # # Проследит чтобы файл закрылся
 
-#fo.close()
+# fo.close()
 
-import os # модуль управления операционной системой
+import os  # модуль управления операционной системой
 # #os.mkdir ('libs')
 # # мягкое создание директории вместо пред вар. елси дир уже есть то не страшно
 # os.makedirs ('libs', exist_ok='True')
@@ -152,7 +151,7 @@ import os # модуль управления операционной сист�
 # res = sorted(int(x) for x in set(res))
 # print(res)
 
-#сериализация и десериализация
+# сериализация и десериализация
 # import pickle
 # import pprint
 # d ={
@@ -180,8 +179,8 @@ import os # модуль управления операционной сист�
 # exсept исключение - обрабатываем исключениЙ
 # finally  выполняется в любом случае
 
-#print(name)
-#открытие несуществующего файла
+# print(name)
+# открытие несуществующего файла
 # flag = False
 # try:
 #     fo = open('inform.txt', encoding= 'utf-8' )
@@ -205,7 +204,7 @@ import os # модуль управления операционной сист�
 
 # А как сдлать если мы не знаем что возникнет
 
-#print('остаток от деления')
+# print('остаток от деления')
 # try:
 #     value = int(input('а что делим 10'))
 #     res = 10%value
@@ -235,4 +234,139 @@ import os # модуль управления операционной сист�
 # except AssertionError:
 #     print('Слишком короткий текст')
 
+# s = ('Вася','Петя','Сидор','Евгений')
+# try:
+#     a =float((input('введите число по индексу')))
+#     assert a%1 == 0
+#     print(s[int(a)])
+# except ValueError:
+#     print('Ввели не число')
+# except IndexError:
+#     print('такого индекса нет')
+# except AssertionError:
+#     print('не целое')
+# f = True
+# while f:
+#     a = input('Введите первое число')
+#     b = input('Введите 2 число')
+#     try:
+#         print('a/b = ', float(a)/float(b) )
+#         f=False
+#     except ZeroDivisionError:
+#         print('b не может быть равно 0')
+#     except ValueError:
+#         print('а и в должны быть числами')
+#     except Exception:
+#         print('Какая-то фигня')
 
+# Практикум
+
+# Обучаемый словарь - создаем сохраняем открываем
+# dict dat отсутствует
+import pickle
+# минимальная версия, если файл dict.dat отсутствует
+# voc = {
+#     'стол': 'table',
+#     'стул': 'chair',
+# }
+#
+#
+# # функция для распечатки словаря
+# def print_voc():
+#     print('Сейчас словарь содержит: ')
+#     for k, v in voc.items():
+#         print(k, '—', v)  # Alt + 0151
+
+# загружаем словарь из файла
+# try:
+#     with open('dict.dat', 'rb') as dump_in:
+#         voc = pickle.load(dump_in)
+# except FileNotFoundError:
+#     with open('dict.dat', 'wb') as dump_out:
+#         pickle.dump(voc, dump_out)
+#     print('Создан минимальный словарь: ')
+#     print_voc()
+#
+# while True:
+#     temp = input('\nВведите слово для перевода или "#" для завершения: ')
+#     word = temp.strip().lower()
+#     if word == '#' or word == '№':
+#         break
+#     if word in voc.keys():
+#         translate = voc[word]
+#         print(f'Слово "{word}" переводится как {translate}.\n')
+#     else:
+#         print(f'Значение слова {word} отсутствует в словаре.')
+#         newkey = f'А как слово {word} переводится.\n'
+#         newkey += 'Если ничего не вводите нажмите ENTER,\n '
+#         newkey += 'или введите его здесь: '
+#         new_word = input(newkey)
+#
+#         if new_word != '' or len(new_word) > 2:
+#             voc[word] = new_word
+#             print(f'Слово {word} с переводом {new_word} внесено в словарь')
+#         else:
+#             print('Ничего не введено или слишком короткое слово')
+#             continue
+#
+# # Сохранить словарь
+# with open('dict.dat', 'wb') as dump_out:
+#     pickle.dump(voc, dump_out)
+#
+# print('До новых встреч!!!')
+
+
+# библиотука pymorphy
+# import pymorphy3
+# from pymorphy3 import MorphAnalyzer
+# form = MorphAnalyzer().parse('бутылка')[0]
+# for btl in reversed(range(99)):
+#     print(f'В холодильнике {btl+1}{form.make_agree_with_number(btl+1).word} пива')
+#     print('Возьмем одну и выпьем')
+#     if btl % 10 == 1 and btl !=11:
+#         remain = 'Осталась'
+#     else:
+#         remain ='осталось'
+# print(f'{remain} {btl}  {form.make_agree_with_number(btl).word} пива' )
+
+# morph = pymorphy3.MorphAnalyzer()
+# print(morph.parse('Дмитрий'))№
+
+
+# Линтер - статический анализатор кода, контролироует следование хорошим практикам
+# Flake8
+# pip install flake8
+# (flake8-bugbear - для нахождения распространнеых логических ошибок в коде)
+# (pep8 - naming - проверяет имена переменных, функций на соответствие pep\)
+# --max-complexity 10 $FileDir$/$FileName$ аргументы
+# Advanced Options/OutputFilter: $FILE_PATH$:$LINES$
+
+# регулярные выражения - поиск по паттернам
+# regular expressions   re
+# r- строка - сырая строка, игнорирует все управляющие последовательности
+import re
+
+#pattern = r'\b\w{4}\b'# все слова из 4 символов
+# pattern = r'\d'# все цифры
+#
+# test_string = ' 10 + 20 , ,eltn fghn fghn 30'
+# #result = re.search(pattern, test_string) # если одно ищем
+# result = re.findall(pattern, test_string)
+# #result = set(result)
+# print(result)
+# # тернарный  if - ternary if
+#print('Цифры есть') if result else print('Цифр нет')
+
+# pattern = r'\((.+?)\)'# все цифры
+#
+# test_string = ' Поиск пообразцу (pattern)'
+# result = re.findall(pattern, test_string)
+# print(result)
+
+# {m} - ровно m раз
+# {m,} -m раз  и более
+#{,n} -  не более n раз
+# {m,n} -  от m до n раз
+# ? от 0 до 1 аналог {0,1}
+# * от 0 до бескон(32767 {1.}
+# + от 1 до бескон {1,}
