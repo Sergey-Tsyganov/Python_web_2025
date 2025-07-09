@@ -370,3 +370,29 @@ import re
 # ? от 0 до 1 аналог {0,1}
 # * от 0 до бескон(32767 {1.}
 # + от 1 до бескон {1,}
+
+
+#pattern = r'стеклянн?ый'  # вторая  н может присутствовать , но не обязана
+#test_string = 'стекляный, оловянный, стеклянный'
+#result = re.findall(pattern, test_string)
+#print(result)
+
+# жадный квантификатор (greedy quantifier)
+#pattern = r'<img.*'
+# схватывает все после img
+# ленивый квантификатор (lazy non greedy)
+#pattern = r'<img.*?>'
+# точный квантификатор - только путь к картинке
+# pattern = r'<img[^>]+src="([^">]+)"'
+#
+# test_string = 'Картинка <img src="bg.jpg">  в тексте </p>'
+# result = re.findall(pattern, test_string)
+# print(result)
+#Вытаскиваем содержимое абзаца HTML
+#pattern = r'<p>(.*?)</p>'
+# pattern = r'<p[^>]*>(.*?)</p>' # содержимое абзаца html с атрибутами
+# test_string = '<b>Цынтрируем содержимое абзаца</b><palign="center">Содержимое</p>'
+#
+# result = re.findall(pattern, test_string)
+# print(result)
+# популярный ресурс https://regex101.com
