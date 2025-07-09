@@ -396,3 +396,36 @@ import re
 # result = re.findall(pattern, test_string)
 # print(result)
 # популярный ресурс https://regex101.com
+
+# удаление пунктуации
+# def remove_pynctuation(input_string: str) -> str:
+#     """
+#     методом sub() заменяем все совпадения пустой строкой и возвращаем  "очищенную"
+#     :param input_string: строка со знаками препинания
+#     :return:
+#     """
+#     return re.sub(r'[^\w\s]','', input_string )
+#
+# test_string = 'Язык Python, являясь интуити-вно понятным, легко выучить! Ну и PEP8.'
+# result = remove_pynctuation(test_string)
+# print(result)
+
+
+#разделители разные
+# pattern= r'[,.;:!?]'
+# test_string = 'яблоко. груша, банан; слива! абрикос'
+# test_string=test_string.replace(' ','')
+# print(test_string)
+# test_str =[]
+# for item in test_string:
+#     test_str += re.split(pattern,test_string)
+# test_str= set(test_str)
+# #result = re.split(pattern,test_str)
+# print(test_str)
+import re
+import requests
+pattern = r'<img[^>]+src="([^">]+)"'
+html = requests.get('https://skillbox.ru').text
+#print (html)
+result = re.findall(pattern,html)
+print(result)
