@@ -482,12 +482,43 @@
 # методы классов  и анализ предыдущих вызовов
 #
 
-from lib import Car
+# from lib import Car
+#
+# car = Car('Skoda','Octavie','Red')
+# car.start_engine()
+# car.drive_to('Город')
+#
+# car2 = Car()
+# #car2.start_engine()
+# car2.drive_to(('Город'))
 
-car = Car('Skoda','Octavie','Red')
-car.start_engine()
-car.drive_to('Город')
+#Геттеры и сеттеры
+class Person:
+    # свойства/поля клвсса
+    def __init__(self,name='Bill',age =1):
+        self._name = name
+        self._age = age
 
-car2 = Car()
-#car2.start_engine()
-car2.drive_to(('Город'))
+    def person_info(self):
+        print(f'Человек с именем {self._name} возраста {self._age}')
+
+    #setter
+    def set_name(self, new_name):
+        if new_name:
+            self._name = new_name
+
+    def set_age(self,new_age):
+        if 0<new_age<140:
+            self._age = new_age
+        else:
+            print('Некорректный возраст - ', new_age)
+    # getter
+    def get_name(self):
+        return self._name
+    def get_age(self):
+        return self._age
+
+p=Person()
+p.person_info()
+p.set_age(135)
+p.person_info()
