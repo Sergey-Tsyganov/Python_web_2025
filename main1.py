@@ -493,32 +493,53 @@
 # car2.drive_to(('Город'))
 
 #Геттеры и сеттеры
-class Person:
-    # свойства/поля клвсса
-    def __init__(self,name='Bill',age =1):
-        self._name = name
-        self._age = age
 
-    def person_info(self):
-        print(f'Человек с именем {self._name} возраста {self._age}')
+#from lib import Car
+# p=Car()
+# print(dir(p))
+# print(p.color)
+# p.set_color('red')
+# print(p.color)
+# a = p.get_color()
+# print(a
+#
+# from lib import Clicker
+# cl=Clicker()
+# cl.click()
+# cl.click()
+# cl.click()
+# cl.reset()
+# print(cl.get_counter())
 
-    #setter
-    def set_name(self, new_name):
-        if new_name:
-            self._name = new_name
 
-    def set_age(self,new_age):
-        if 0<new_age<140:
-            self._age = new_age
-        else:
-            print('Некорректный возраст - ', new_age)
-    # getter
-    def get_name(self):
-        return self._name
-    def get_age(self):
-        return self._age
+# from lib import Separator
+#
+# d=Separator()
+# d.add_num(5)
+# d.add_num(6)
+# d.add_num(10)
+# d.add_num(3)
+# d.add_num(8)
+#
+# print(d.get_odd())
+# #print(d.get_even())
+#
+# from lib import Sorter
+# s=Sorter()
+# s.add_word("Привет")
+# s.add_word("Пока")
+# s.add_word("Здорово")
+# print(s.result())
 
-p=Person()
-p.person_info()
-p.set_age(135)
-p.person_info()
+
+#ДЗ
+class Balance:
+    self.rigth =0
+    self.left = 0
+    def add_left(self,weight):
+        pass
+    def add_right(self,weight):
+        pass
+    def result(self):
+         return - правая, левая,  # состояние весов
+
