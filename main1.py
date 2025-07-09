@@ -118,7 +118,7 @@
 
 # fo.close()
 
-#import os  # модуль управления операционной системой
+# import os  # модуль управления операционной системой
 # #os.mkdir ('libs')
 # # мягкое создание директории вместо пред вар. елси дир уже есть то не страшно
 # os.makedirs ('libs', exist_ok='True')
@@ -263,7 +263,7 @@
 
 # Обучаемый словарь - создаем сохраняем открываем
 # dict dat отсутствует
-#import pickle
+# import pickle
 # минимальная версия, если файл dict.dat отсутствует
 # voc = {
 #     'стол': 'table',
@@ -344,9 +344,9 @@
 # регулярные выражения - поиск по паттернам
 # regular expressions   re
 # r- строка - сырая строка, игнорирует все управляющие последовательности
-#import re
+# import re
 
-#pattern = r'\b\w{4}\b'# все слова из 4 символов
+# pattern = r'\b\w{4}\b'# все слова из 4 символов
 # pattern = r'\d'# все цифры
 #
 # test_string = ' 10 + 20 , ,eltn fghn fghn 30'
@@ -355,7 +355,7 @@
 # #result = set(result)
 # print(result)
 # # тернарный  if - ternary if
-#print('Цифры есть') if result else print('Цифр нет')
+# print('Цифры есть') if result else print('Цифр нет')
 
 # pattern = r'\((.+?)\)'# все цифры
 #
@@ -365,31 +365,31 @@
 
 # {m} - ровно m раз
 # {m,} -m раз  и более
-#{,n} -  не более n раз
+# {,n} -  не более n раз
 # {m,n} -  от m до n раз
 # ? от 0 до 1 аналог {0,1}
 # * от 0 до бескон(32767 {1.}
 # + от 1 до бескон {1,}
 
 
-#pattern = r'стеклянн?ый'  # вторая  н может присутствовать , но не обязана
-#test_string = 'стекляный, оловянный, стеклянный'
-#result = re.findall(pattern, test_string)
-#print(result)
+# pattern = r'стеклянн?ый'  # вторая  н может присутствовать , но не обязана
+# test_string = 'стекляный, оловянный, стеклянный'
+# result = re.findall(pattern, test_string)
+# print(result)
 
 # жадный квантификатор (greedy quantifier)
-#pattern = r'<img.*'
+# pattern = r'<img.*'
 # схватывает все после img
 # ленивый квантификатор (lazy non greedy)
-#pattern = r'<img.*?>'
+# pattern = r'<img.*?>'
 # точный квантификатор - только путь к картинке
 # pattern = r'<img[^>]+src="([^">]+)"'
 #
 # test_string = 'Картинка <img src="bg.jpg">  в тексте </p>'
 # result = re.findall(pattern, test_string)
 # print(result)
-#Вытаскиваем содержимое абзаца HTML
-#pattern = r'<p>(.*?)</p>'
+# Вытаскиваем содержимое абзаца HTML
+# pattern = r'<p>(.*?)</p>'
 # pattern = r'<p[^>]*>(.*?)</p>' # содержимое абзаца html с атрибутами
 # test_string = '<b>Цынтрируем содержимое абзаца</b><palign="center">Содержимое</p>'
 #
@@ -411,7 +411,7 @@
 # print(result)
 
 
-#разделители разные
+# разделители разные
 # pattern= r'[,.;:!?]'
 # test_string = 'яблоко. груша, банан; слива! абрикос'
 # test_string=test_string.replace(' ','')
@@ -443,6 +443,7 @@
 # класс определяет атрибуты, по сути набор атрибутов
 #
 # создание класса - название Класса в большой буквы
+# Свойства классов
 # class Fruit:
 #     pass
 #
@@ -460,3 +461,33 @@
 # print(a.weight)
 # print(b.name)
 # print(b.weight)
+
+
+# методы классов
+# class Greeter:
+#     def hello(self, name='Noname'):
+#         print('Привет мир',name)
+#
+#     def good_bye(self):
+#         print('Пока, мир')
+#
+#
+# g = Greeter()
+# g.hello('Горшок')
+# g.good_bye()
+
+# self - в него передается объект, который его вызвал. Это ссылка на объект вызвавший класс
+
+
+# методы классов  и анализ предыдущих вызовов
+#
+
+from lib import Car
+
+car = Car('Skoda','Octavie','Red')
+car.start_engine()
+car.drive_to('Город')
+
+car2 = Car()
+#car2.start_engine()
+car2.drive_to(('Город'))
