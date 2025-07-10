@@ -562,6 +562,8 @@
 # print( f'{book.get_title()},{book.get_autor()}
 # isinstance(объект,(тип1, тип2, тип3)
 from lib import Circle, Square
+
+
 # def shape_info(shape):
 #
 #     r, c = ('прямоугольник', 'круг')
@@ -609,4 +611,162 @@ from lib import Circle, Square
 # print(lst)
 
 
+# Специальные методы
+# __init__
 
+# class MyTime:
+#     def __init__(self,minutes,seconds):
+#         if 0<=minutes<60:
+#             self.minutes =minutes
+#         if 0<=seconds<60:
+#             self.seconds = seconds
+#
+#     def __str__(self):
+#         return f'<Time{self.minutes}:{self.seconds}>'
+#
+#     def __add__(self, others):
+#         m=self.minutes+others.minutes
+#         s=self.seconds+others.seconds
+#         m +=m//60+s//60
+#         s =s%60
+#         print(m,s)
+#         return MyTime(m,s)
+#
+# t1= MyTime(13,40)
+# t2= MyTime(15,25)
+# print (t1+t2)
+
+# class SquareFunction:
+#     def __init__(self,a,b,c):
+#         self.a=a
+#         self.b = b
+#         self.c = c
+#
+#     def __call__(self, x):
+#         return self.a*x**2 +self.b*x+self.c
+# s=SquareFunction(1,2,3)
+# print(s(2))
+
+
+# наследование(расширение) inheritance
+# класс от которого наследуется - базовый, родительский, суперкласс
+# наследуемый класс - производный, дочерний
+# from math import pi
+#
+# class Shape:
+#     def info(self):
+#         print(f'Класс: {self.__class__.__name__}')
+#
+#
+# class Circle(Shape):
+#     def __init__(self, radius):
+#         self.radius = radius
+#         self.name = "Круг"
+#
+#     def perimetr(self):
+#         return 2 * pi * self.radius
+#
+#     def area(self):
+#         return pi * self.radius ** 2
+#
+#     def get_name(self):
+#         return 'круг'
+#
+#
+# class Square(Shape):
+#     def __init__(self, width, height=0):
+#         self.width = width
+#         if height == 0:
+#             self.height = self.width
+#         else:
+#             self.height = height
+#
+#     def perimetr(self):
+#         return (self.height + self.width) * 2
+#
+#     def area(self):
+#         return self.height * self.width
+#
+#     def get_name(self):
+#         return 'прямоугольник'
+#
+#
+# # class Kvadrat(Square,Shape) :
+# #     super().__init__(self,self)
+#
+#
+# s=Square(5)
+# print(s.area())
+# # print(s.info())
+#
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#         self.name = 'прямоугольник'
+#
+#     def perimetr(self):
+#         return 2 * (self.width + self.height)
+#
+#     def area(self):
+#         return self.width * self.height
+#
+#     def get_name(self):
+#         return self.name
+#
+#
+# class Square(Rectangle):
+#     def __init__(self, side):
+#         super().__init__(side, side)
+#         self.name = 'квадрат'
+#
+#
+# s = Square(5)
+# print(s.area())
+# print(s.perimetr())
+# print(s.get_name())
+
+# method override; operator overloading
+# __call__ - экземпляр класса становится вызываемым
+# (как функция)
+# y = ax^2 + bx + c
+# class SquareFunction:
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def __call__(self, x):
+#         return self.a * x ** 2 + self.b * x + self.c
+#
+#
+# s = SquareFunction(1, 2, 3)
+# print(s(2))
+
+# Банковскя систем
+# Класс BankAccount owner, balanc
+#методы депозит(>0), withdraw(amount(<balance). get_balance
+
+class BankAccount:
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
+    def amount(self,x):
+        if self.balance>=x:
+            self.balance = self.balance-x
+        else:
+             print(f'снять более {self.balance} нельзя!')
+    def deposit(self,x):
+        if x<0:
+            return F'Положить отрицательную сумму {self.balance} нельзя!'
+        else: self.balance +=x
+    def get_balance(self):
+        return f'Клиент {self.owner}, баланс {self.balance}'
+
+s= BankAccount('Иванов',100)
+
+s.amount(110)
+print(s.owner,s.balance)
+s.deposit(10)
+print(s.owner,s.balance)
+print(s.get_balance())

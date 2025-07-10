@@ -285,3 +285,22 @@ class Stat:
 
 # def shape_info(shape):
 #     print(f'Площадь {shape.get_name()} {shape.area()}, периметр {shape.perimetr()} ')
+
+
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f'<Point ({self.x},{self.y})>'
+
+    def __repr__(self):
+        return f'<Point ({self.x},{self.y})>'
+
+    def __sub__(self,other):
+        return Point(self.x-other.x,self.y-other.y)
+
+    def __add__(self,other):
+
+        return ((self.x - other.x)**2 +( self.y - other.y)**2)**(1/2)
