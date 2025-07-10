@@ -492,9 +492,9 @@
 # #car2.start_engine()
 # car2.drive_to(('Город'))
 
-#Геттеры и сеттеры
+# Геттеры и сеттеры
 
-#from lib import Car
+# from lib import Car
 # p=Car()
 # print(dir(p))
 # print(p.color)
@@ -532,14 +532,81 @@
 # print(s.result())
 
 
-#ДЗ
-class Balance:
-    self.rigth =0
-    self.left = 0
-    def add_left(self,weight):
-        pass
-    def add_right(self,weight):
-        pass
-    def result(self):
-         return - правая, левая,  # состояние весов
+# ДЗ
+# class Balance:
+#     self.rigth =0
+#     self.left = 0
+#     def add_left(self,weight):
+#         pass
+#     def add_right(self,weight):
+#         pass
+#     def result(self):
+#          return - правая, левая,  # состояние весов
+
+
+# Полиморфизм
+# методы:
+# method oveerride - переопределение методов
+# operator overloading = оператор переопределения
+
+# print(1+2)
+# оператор + полиморфный  - работает с переменными разных типов
+# интрпретатор проверяет типы данных и выводит результат в зависимости от их типа
+# print([1,2]+[3,4])
+# полиморфизм свойство кода работать с разными типами двнных
+# def func
+
+# c
+# book=Book('Яхык С++', author='Бьярн Страупструп')
+#
+# print( f'{book.get_title()},{book.get_autor()}
+# isinstance(объект,(тип1, тип2, тип3)
+from lib import Circle, Square
+# def shape_info(shape):
+#
+#     r, c = ('прямоугольник', 'круг')
+#     if isinstance(shape, Square):
+#         fig = r
+#     if isinstance(shape, Circle):
+#         fig = c
+#     print(f'Площадь {fig}а {shape.area()}, периметр {shape.perimetr()} ')
+#
+# s = Circle(10)
+#
+# shape_info(s)
+#
+# r = Square(10)
+# shape_info(r)
+
+
+###
+# from lib import Person,Student,Employee
+# people = [
+#     Person('Александр',27 ),
+#     Student('Петр',22,'СПБГАСУ'),
+#     Employee('Иван',30, 'Пупкин и сыновья'),
+# ]
+# for person in people:
+#     if isinstance(person, Student):
+#         print(person.get_univercity())
+#     elif isinstance(person, Employee):
+#         print(person.get_company())
+#     else:
+#         print(person.get_name())
+# from lib import Stat
+#
+# lst = list(range(1, 15))
+#
+#
+# lst += ['a']
+#
+#
+#
+# s = Stat(lst)
+# print(s.get_min())
+# print(s.get_max())
+#
+# print(lst)
+
+
 
