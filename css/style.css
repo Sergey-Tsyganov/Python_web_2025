@@ -1,0 +1,15 @@
+h2 {
+            color:blue;
+
+        }
+p.red {
+    color: red;
+
+}
+
+h2 {
+    color: RGBA(255,0,0,0.5)
+}
+ul>li {
+    color: green;
+}

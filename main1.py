@@ -1,6 +1,7 @@
 # Запись данных в существующий файл
 # from PIL.SpiderImagePlugin import iforms
 # from openpyxl import load_workbook
+import schedule
 
 # Открываем (загружаем) рабочую книгу
 # wb = load_workbook('docs/report.xlsx')
@@ -747,26 +748,101 @@ from lib import Circle, Square
 # Класс BankAccount owner, balanc
 #методы депозит(>0), withdraw(amount(<balance). get_balance
 
-class BankAccount:
-    def __init__(self,owner,balance):
-        self.owner = owner
-        self.balance = balance
-    def amount(self,x):
-        if self.balance>=x:
-            self.balance = self.balance-x
-        else:
-             print(f'снять более {self.balance} нельзя!')
-    def deposit(self,x):
-        if x<0:
-            return F'Положить отрицательную сумму {self.balance} нельзя!'
-        else: self.balance +=x
-    def get_balance(self):
-        return f'Клиент {self.owner}, баланс {self.balance}'
+# class BankAccount:
+#     def __init__(self,owner,balance):
+#         self.owner = owner
+#         self.balance = balance
+#     def amount(self,x):
+#         if self.balance>=x:
+#             self.balance = self.balance-x
+#         else:
+#              print(f'снять более {self.balance} нельзя!')
+#     def deposit(self,x):
+#         if x<0:
+#             return F'Положить отрицательную сумму {self.balance} нельзя!'
+#         else: self.balance +=x
+#     def get_balance(self):
+#         return f'Клиент {self.owner}, баланс {self.balance}'
+#
+# s= BankAccount('Иванов',100)
+#
+# s.amount(110)
+# print(s.owner,s.balance)
+# s.deposit(10)
+# print(s.owner,s.balance)
+# print(s.get_balance())
 
-s= BankAccount('Иванов',100)
 
-s.amount(110)
-print(s.owner,s.balance)
-s.deposit(10)
-print(s.owner,s.balance)
-print(s.get_balance())
+#ДЗ
+
+
+# class Animal:
+#     def make_sound(self):
+#         print('Звуки животных')
+#
+# # дочерние
+# class Dog(Animal):
+#     def make_sound(self):
+#         print('Гав!"')
+#
+# class Cat(Animal):
+#     def make_sound(self):
+#         print('Мяу!')
+#
+# class Elephant(Animal):
+#     def make_sound(self):
+#         print("Как то непонятно, но страшно!")
+#
+# class Piggy(Animal):
+#     def make_sound(self):
+#         print("Хрю-Хрю!")
+#
+#
+# class Zoo:
+#     def __init__(self):
+#         self.animals = []  # список животных
+#
+#     def add_animal(self, animal):
+#         self.animals.append(animal)
+#
+#     def make_all_sounds(self):
+#         for animal in self.animals:
+#             animal.make_sound()
+#
+#
+#
+# zoo = Zoo()
+# zoo.add_animal(Piggy())
+# zoo.add_animal(Dog())
+# zoo.add_animal(Cat())
+# zoo.add_animal(Elephant())
+#
+# zoo.make_all_sounds()
+
+# import sys
+# print('hello world', sys.argv[0],' и мой аргумент', sys.argv[1])
+# if len(sys.argv)>=2:
+#     match sys.argv[1]:
+#         case 'p':
+#             print('Привет')
+#         case 'g':
+#             print('Пока')
+
+# Cron и schedule
+# запуск по расписанию и периодические задачи
+# import schedule
+# import dat
+# import dat
+# i=1
+#
+# def job():
+#     global i
+#     print(f'скрипт запустился {i}')
+#     i +=1
+#     t = datetime.datetime.now()
+#     print('Время: ', t.strftime('%H:%M:%S'))
+#
+# schedule.every(3).seconds.do(job)
+# while True:
+#     schedule.run_pending()
+# плагин EMMET работает с HTML
