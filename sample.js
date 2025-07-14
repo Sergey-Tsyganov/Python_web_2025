@@ -13,9 +13,23 @@ document.writeln("Вас зовут" + name);
 let name = prompt("Ваше имя");
 sayHello(name)
 */
+/*
 let colors=["Красный","Синий","Голубой"];
 document.writeln("<h1>Цвета<h1><ul>");
 for(let i=0; i<colors.length;i++){
     document.writeln("<li>" + colors[i] +"</li>");
 }
 document.writeln("</ul>");
+*/
+function changeColor(){
+//document.getElementById('alive').style.color = 'red';
+    const txt = document.getElementById('alive');
+    if (txt.style.display === 'none'){
+    txt.style.display = block;
+    } else{
+    txt.style.display = 'none';
+    }
+}
+
+// подключение к элементу DOM
+const txt = document.getElementById('alive').onclick = changeColor;
