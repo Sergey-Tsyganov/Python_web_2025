@@ -1,6 +1,8 @@
 # Запись данных в существующий файл
 # from PIL.SpiderImagePlugin import iforms
 # from openpyxl import load_workbook
+import csv
+
 import schedule
 
 # Открываем (загружаем) рабочую книгу
@@ -825,24 +827,64 @@ from lib import Circle, Square
 #     match sys.argv[1]:
 #         case 'p':
 #             print('Привет')
-#         case 'g':
-#             print('Пока')
+# #         case 'g':
+# #             print('Пока')
+#
+# # Cron и schedule
+# # запуск по расписанию и периодические задачи
+# # import schedule
+# # import dat
+# # import dat
+# # i=1
+# #
+# # def job():
+# #     global i
+# #     print(f'скрипт запустился {i}')
+# #     i +=1
+# #     t = datetime.datetime.now()
+# #     print('Время: ', t.strftime('%H:%M:%S'))
+# #
+# # schedule.every(3).seconds.do(job)
+# # while True:
+# #     schedule.run_pending()
+# # плагин EMMET работает с HTML
+#
+#
+# import csv
+#
+# data =  [
+#     ['name','age','city'],
+#     ['Борис',25,'Воронеж'],
+#     ['Глеб',35, 'МОсква'],
+#     ['етр',15,'Мухосранск']
+#
+# ]
+# with open('people.csv','r',encoding ='utf-8') as f:
+#     reader = csv.reader(f, delimiter=',', quotechar = '"')
+#     for row in reader:
+#         print(row)
+#
+# with open('employee.csv','w', newline = '',encoding='utf-8') as f:
+#     writer = csv.writer(f)
+#     writer.writerows(data)
+#
+# with open('people.csv', 'r', encoding = 'utf-8') as f:
+#     dict_reader=csv.DictReader(f)
+#     print(dict_reader)
+#     for row in dict_reader:
+#         print(f'{row('name')} живет в городе {row('city')}')
+#
+# field_names = ['name','age','city']
+# data = {
+#     'name':'Борис';
+#     'age': 27;
+#     'city':'Москва'
+# }
+#
+# with open('file.csv', 'w', newline='', encoding='utf-8') as f:
+#
 
-# Cron и schedule
-# запуск по расписанию и периодические задачи
-# import schedule
-# import dat
-# import dat
-# i=1
-#
-# def job():
-#     global i
-#     print(f'скрипт запустился {i}')
-#     i +=1
-#     t = datetime.datetime.now()
-#     print('Время: ', t.strftime('%H:%M:%S'))
-#
-# schedule.every(3).seconds.do(job)
-# while True:
-#     schedule.run_pending()
-# плагин EMMET работает с HTML
+data = ['name', 25,'town']
+with open('savefile.csv', 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f,quoting =csv.QUOTE_NONNUMERIC)
+    writer.writerow(data)
