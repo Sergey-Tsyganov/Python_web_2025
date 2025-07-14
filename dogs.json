@@ -1,0 +1,9 @@
+{
+  "name": "Rex",
+  "photo": "rex.jpg",
+  "age": "4",
+  "meals": [
+    "Purina",
+    "Royal Canin"
+  ]
+}

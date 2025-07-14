@@ -2,6 +2,7 @@
 # from PIL.SpiderImagePlugin import iforms
 # from openpyxl import load_workbook
 import csv
+from zipfile import ZipFile
 
 import schedule
 
@@ -884,7 +885,44 @@ from lib import Circle, Square
 # with open('file.csv', 'w', newline='', encoding='utf-8') as f:
 #
 
-data = ['name', 25,'town']
-with open('savefile.csv', 'w', newline='', encoding='utf-8') as f:
-    writer = csv.writer(f,quoting =csv.QUOTE_NONNUMERIC)
-    writer.writerow(data)
+# data = ['name', 25,'town']
+# with open('savefile.csv', 'w', newline='', encoding='utf-8') as f:
+#     writer = csv.writer(f,quoting =csv.QUOTE_NONNUMERIC)
+#     writer.writerow(data)
+#
+
+# from zipfile import ZipFile
+# import os
+#
+# csv_files=[f for f in os.listdir() if f.endswith('.csv')]
+# print(csv_files)
+# with ZipFile('arh.zip', 'w') as myzip:
+#     for file in csv_files:
+#         myzip.write(file)
+#         os.remove(file)
+
+#unzip
+# files_to_aextract = ['people.csv', 'employee.csv']
+# with ZipFile('arh.zip','r') as zip_obj:
+#     zip_obj.extractall(members=files_to_aextract)
+# получить список
+# with ZipFile('arh.zip','r') as zip_obj:
+#     print (zip_obj.namelist())
+
+
+#json  (Java Script object notation)
+# для чтения
+# load() из файла
+# loads() - читает строковое представление
+import json
+with open('dogs.json','rt') as d:
+    #data = json.load(d)
+    temp = d.read()
+    data = json.loads(temp)
+    print(data)
+    print (data)
+for k,v in data.items():
+    if type(v) == list:
+        print(f'{k}: {', '.join(v) }')
+    else:
+        print(f'{k},{v}')
