@@ -1,7 +1,7 @@
 # введение во Flask
 #MVC - model view controller
 import sqlite3
-from flask import Flask, url_for
+from flask import Flask, url_for, request
 app = Flask(__name__)
 
 @app.route('/')
@@ -85,6 +85,19 @@ def get_user(id_num=None):
     </tr>
     </table>'''
 
+@app.route('/form-test', methods=['POST','GET'])
+def form_test():
+    if request.method=='GET':
+        with open('form.html', 'r', encoding='utf-8') as html:
+            return html.read()
+    elif request.method == 'POST':
+        print(request.form['gender'])
+        print(request.form['email'])
+        print(request.form['about'])
+        print(request.form['level'])
+        print(request.form['accept'])
+        print(request.form)
+        return 'Форма успешно отправлена'
 
 
 if __name__ == '__main__':
