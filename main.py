@@ -59,20 +59,27 @@ def sample_page2():
 def greeting(user, idnum):
     return f'Привет, {user} c id={idnum}'
 
-@app.route('/get-user/<int:id_num>')
+@@app.route('/get-user/<int:id_num>')
 def get_user(id_num):
-    connection = sqlite3.connect('db/movies.sqlite')
-    cursor = connection.cursor()
-    query =f'select name FROM users where trip_id={id_num}'
-    responce = cursor.execute(query)
-    result = responce.fetchone()
-    print(result)
-    return str(result[0])
-
-    # #     reader = csv.reader(f, delimiter=',')
-    # #     next(reader) #пропустить первую строку
-    connection.commit()
-    connection.close()
+    con = sqlite3.connect('db/movies.sqlite')
+    cur = con.cursor()
+    query = f'SELECT name, city FROM users WHERE trip_id={id_num}'
+    response = cur.execute(query)
+    result = response.fetchone()
+    # print(result)
+    name, city = result
+    cur.close()
+    con.close()
+    return f'''<table border="1">
+    <tr>
+    <td>ФИО</td>
+    <td>Город</td>
+    </tr>
+    <tr>
+    <td>{name}</td>
+    <td>{city}</td>
+    </tr>
+    </table>'''
 
 
 
