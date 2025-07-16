@@ -59,8 +59,12 @@ def sample_page2():
 def greeting(user, idnum):
     return f'Привет, {user} c id={idnum}'
 
-@@app.route('/get-user/<int:id_num>')
-def get_user(id_num):
+
+@app.route('/get-user/')
+@app.route('/get-user/<int:id_num>')
+def get_user(id_num=None):
+    if id_num is None:
+        return 'Нет номера записи'
     con = sqlite3.connect('db/movies.sqlite')
     cur = con.cursor()
     query = f'SELECT name, city FROM users WHERE trip_id={id_num}'
