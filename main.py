@@ -1,5 +1,10 @@
 # введение во Flask
 #MVC - model view controller
+# get - запрашивает данные не меняя состояния сервера
+# post - отправляет данные на сервер(submit)
+# PUT - принулительно заменяет все на сервере из контекста запроса
+# Delete - удаляет указанные данные
+# patch  - частичное изменение данных
 import sqlite3
 from flask import Flask, url_for, request
 app = Flask(__name__)
