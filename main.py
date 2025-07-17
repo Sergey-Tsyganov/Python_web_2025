@@ -6,12 +6,25 @@
 # Delete - удаляет указанные данные
 # patch  - частичное изменение данных
 import sqlite3
-from flask import Flask, url_for, request
+from flask import Flask, url_for, request, render_template_string
+from werkzeug.utils import secure_filename
+import sqlite3
+import os
+from  flask import Flask, render_template
+
+
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] ='uploads/'
+ALLOWED_EXTENTIONS = ['txt','pdf','jpg','png','zip']
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENTIONS
 
 @app.route('/')
 
 def index():
+    username = 'слушатель'
+    return render_template('index.html',title ='приветствие', user = username)
     return 'Привет ,Flask'
 
 @app.route('/about')
@@ -103,6 +116,25 @@ def form_test():
         print(request.form['accept'])
         print(request.form)
         return 'Форма успешно отправлена'
+
+@app.route('/upload2',methods=['POST','GET'])
+def file_upload():
+    if request.method=='GET':
+        with open('upload2.html', 'r', encoding='utf-8') as html:
+            return html.read()
+    elif request.method =="POST":
+        if 'file' not in request.files:
+            return 'Ничего не выбрали'
+        file=request.files['file']
+        if file.filename =='':
+            return 'Файл без имени'
+        if file and allowed_file(file.filename):
+            new_name = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'],new_name))
+            return f'файл {new_name}загружен успешно'
+        pass
+    return 'Ошибка загрузки'
+
 
 
 if __name__ == '__main__':
