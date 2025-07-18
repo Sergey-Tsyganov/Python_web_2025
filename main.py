@@ -7,12 +7,18 @@
 # PATCH - частичное изменение данных
 # JINJA - переменные, условия, циклы и т.д.
 # ORM  - Object relational mapping
+# DBeaver - универсальный софт для работы с БД
 import os.path
+
+from openpyxl.styles.builtins import title
+
 from forms.loginform import LoginForm
 from flask import Flask, url_for, request, render_template
 from werkzeug.utils import secure_filename
 import sqlite3
 from data import db_session
+from data.users import User
+from data.news import News
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 app.config['SECRET_KEY'] = 'just_secret_key'
@@ -23,6 +29,12 @@ debug = False
 def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+# обработчик 404 ошибки
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html', title='не найдено')
+
 
 
 @app.route('/')
@@ -191,6 +203,49 @@ def queue():
     return render_template('vars.html', title='Стоим в очереди')
 
 
+# вывод всех публичных новостей
+@app.route('/news')
+def news():
+    db_sess = db_session.create_session()
+    all_news = db_sess.query(News).filter(News.is_private != True).all()
+    print(all_news)
+    return render_template('news.html',totle='Новости', news =all_news)
+
+
+
+
 if __name__ == '__main__':
     db_session.global_init('db/news.sqlite')
     app.run(host='127.0.0.1', port=5000, debug=debug)
+#     #user = User()
+#     db_sess = db_session.create_session()
+#   #  first = db_sess.query(User).first()
+#   #  first = db_sess.query(User).all()
+#   #  first = db_sess.query(User).filter(User.id>'1').all()
+# # вылавливаем сзапись и меняем ее
+#     #user = db_sess.query(User).filter(User.id ==2).first()
+#     #user.set_username ('Васек')
+#     #user = db_sess.query(User).filter(User.id == 4).delete()
+#     # user.name = 'Sergey4'
+#     # user.about = 'Какие то данные'
+#     # user.email = 'tsysn3@gmail.com'
+#     # db_sess = db_session.create_session()
+#     # db_sess.add(user)
+#     user = db_sess.query(User).filter(User.id == 1).first()
+#
+#     news = News(title = 'First New', content = 'New Conternt', user_id = user.id, is_private = False)
+#
+#     print(news.content)
+#     #user.name = 'Sergey4'
+#     #news.title = 'Новая новость'
+#     #news.content = 'Что то'
+#     #news.user_id = '1'
+#     # db_sess = db_session.create_session()
+#     db_sess.add(news)
+#     user = db_sess.query(User).filter(User.id == 1).first()
+#     news = News(title='Second New', content='Second Conternt', user_id=user.id, is_private=False)
+#     db_sess.add(news)
+#     for news in user.news:
+#         print(news.content)
+#     db_sess.commit()
+#     #print(first)
